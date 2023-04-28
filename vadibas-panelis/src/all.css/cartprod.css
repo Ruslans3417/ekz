@@ -1,12 +1,31 @@
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Центрирование карточек по горизонтали */
+/* На телефонах и планшетах отображаем только 2 карты в ряд */
+@media (max-width: 767px) {
+  .card-container .ant-col {
+    width: 50%;
   }
-  
-  .ant-card {
-    flex: 1 0 calc(25% - 14px); /* Ширина карточки, 25% на всех экранах, с учетом внешних отступов */
-    max-width: calc(25% - 20px); /* Максимальная ширина карточки */
-    margin: 2px; /* Внешний отступ между карточками */
-    flex-shrink: 0; /* Отключение сжатия карточки */
+}
+
+/* На планшетах отображаем 2 карты в ряд */
+@media (min-width: 768px) and (max-width: 991px) {
+  .card-container .ant-col {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card-container .ant-col {
+    width: 50%;
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Центрирование карточек по горизонтали */
+}
+
+.card-container .ant-card {
+  width:  290px;
+  height: 290px;
+  margin: 100px;
   }
