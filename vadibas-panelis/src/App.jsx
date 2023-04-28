@@ -13,13 +13,11 @@ function App() {
   const totalItems = 12;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   
-  // Состояние для отслеживания, открыта ли главная страница
-  const [isMainPageOpen, setIsMainPageOpen] = useState(true);
 
   return (
     <div className="app">
       <Header />
-      {isMainPageOpen && (
+      
         <div
           style={{
             paddingTop: '50px',
@@ -44,10 +42,10 @@ function App() {
     ‌
     ‌Предлагаю собрать ваш домашний уход, как из профессиональных линеек, так и из корейских средств.
     ‌
-    ‌Я буду рада, если заботу о вашей красоте и здоровье кожи доверите именно мне!*/
+    ‌Я буду рада, если заботу о вашей красоте и здоровье кожи доверите именно мне!
     </Title>
         </div> 
-      )}
+      
       <main className="main-content">
       <div className="carousel-container">
   <h2 style={{ textAlign: 'center' }}>Ваши отзывы</h2>
@@ -56,10 +54,10 @@ function App() {
       <img src="https://via.placeholder.com/200x100" alt="review" style={{ width: '110%' }} />
     </div>
     <div>
-      <img src="https://via.placeholder.com/2000x100" alt="review" style={{ width: '110%' }} />
+      <img src="https://via.placeholder.com/200x100" alt="review" style={{ width: '110%' }} />
     </div>
     <div>
-      <img src="https://via.placeholder.com/2000x100" alt="review" style={{ width: '110%' }} />
+      <img src="https://via.placeholder.com/200x100" alt="review" style={{ width: '110%' }} />
     </div>
   </Carousel>
     </div>
