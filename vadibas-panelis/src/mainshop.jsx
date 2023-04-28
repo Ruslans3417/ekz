@@ -207,7 +207,8 @@ const CatalogPage = () => {
 
   return (
     <div style={{ padding: "24px" }}>
-      <h1>Каталог продуктов</h1>
+      
+      <h1 style={{ marginTop: "40px"}}>Каталог продуктов</h1>
       <Row gutter={[16, 16]} className="card-container">
         {products.map((product) => (
           <Col xs={24} sm={12} md={12} lg={8} key={product.id}> {/* Изменение на md={12} и lg={8} */}
