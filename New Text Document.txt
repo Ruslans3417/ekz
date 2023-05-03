@@ -1,0 +1,3 @@
+PS C:\Prakse\Projekts> cd .\vadibas-panelis\
+PS C:\Prakse\Projekts\vadibas-panelis> npm run start
+npm i antd-weekly-calendar
