@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Divider } from 'antd';
 import { InstagramOutlined, FacebookOutlined, WhatsAppOutlined } from '@ant-design/icons';
+import './all.css/contact.css';
 
 const { Title, Paragraph } = Typography;
 

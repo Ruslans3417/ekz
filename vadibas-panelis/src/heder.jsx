@@ -6,8 +6,12 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import MainShop from './mainshop'; // Импортируем компонент MainShop из соответствующего файла
 import Contact from './contact';
 import Karzina from './karzina';
-import App from './App';
+import Main from './main';
 import Dostavka from './dostavka';
+import Blog from './blog';
+import Reg from './reg';
+import Login from './login';
+
 
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -20,28 +24,34 @@ function Header() {
     <header>
       <Router>
         <nav className={`navbar ${showMenu ? 'show' : ''}`}>
-          <Link to="/" className="logo">
+        <a href="/main" className="logo">
             Cristal
-          </Link>
+            </a>
           <div className="navbar-menu">
             <ul>
+              
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <Link to="/App">Главная</Link> {/* Добавляем эту строку */}
+                <a href="/mainshop">Каталог</a> {/* Изменили ссылку на /mainshop */}
+              </li>
+
+              <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
+                <a href="/reg">reg</a> {/* Изменили ссылку на /mainshop */}
               </li>
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <Link to="/mainshop">Каталог</Link> {/* Изменили ссылку на /mainshop */}
+                <a href="/login">login</a> {/* Изменили ссылку на /mainshop */}
+              </li>
+
+              <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
+                <a href="/blog">Процедуры</a>
               </li>
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <Link to="/blog">Процедуры</Link>
+              <a href="/contact">Контакты</a> {/* Добавляем эту строку */}
               </li>
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-              <Link to="/contact">Контакты</Link> {/* Добавляем эту строку */}
+                <a href="/karzina">Карзина</a>
               </li>
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <Link to="/karzina">Карзина</Link>
-              </li>
-              <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-              <Link to="/dostavka">Доставка</Link> {/* Изменяем ссылку на /dostavka */}
+              <a href="/dostavka">Доставка</a> {/* Изменяем ссылку на /dostavka */}
               </li>
             </ul>
           </div>
@@ -50,15 +60,22 @@ function Header() {
           </button>
         </nav>
         <Routes> {/* Добавляем компонент Routes */}
+        <Route exact path="/reg" element={<Reg />} /> {/* Изменяем компонент MainShop на элемент */}
+        <Route exact path="/login" element={<Login />} /> {/* Изменяем компонент MainShop на элемент */}
+
+
+        <Route exact path="/main" element={<Main />} /> {/* Изменяем компонент MainShop на элемент */}
+        <Route exact path="/blog" element={<Blog />} /> {/* Изменяем компонент MainShop на элемент */}
         <Route exact path="/dostavka" element={<Dostavka />} /> {/* Добавляем маршрут для /dostavka */}
-        <Route exact path="/App" element={<main />} /> {/* Добавляем эту строку */}
         <Route exact path="/contact" element={<Contact />} /> {/* Добавляем эту строку */}
         <Route exact path="/karzina" element={<Karzina />} /> {/* Изменяем компонент MainShop на элемент */}
-          <Route exact path="/mainshop" element={<MainShop />} /> {/* Изменяем компонент MainShop на элемент */}
+        <Route exact path="/mainshop" element={<MainShop />} /> {/* Изменяем компонент MainShop на элемент */}
         </Routes>
       </Router>
     </header>
   );
 }
+
+
 
 export default Header;
