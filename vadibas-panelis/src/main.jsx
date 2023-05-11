@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import './all.css/App.css';
 import Header from './heder';
 import { Carousel, Card, Button, Typography } from 'antd';
-import Footer from './Footer';
+import Footer from './Footer'; 
 import './all.css/car.css';
+
 
 const { Title } = Typography;
 const { Meta } = Card;
@@ -31,6 +32,7 @@ function Main() {
               fontSize: '2rem',
               fontWeight: 'bold',
               textShadow: '1px 1px #ccc',
+              padding: '0 30px', // добавлено свойство padding
             }}
        >
         
@@ -84,7 +86,7 @@ function Main() {
   </Carousel>
   
 </div>
-     
+
       </main>
 
     </div>

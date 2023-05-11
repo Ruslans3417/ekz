@@ -53,6 +53,7 @@ function Header() {
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
               <a href="/dostavka">Доставка</a> {/* Изменяем ссылку на /dostavka */}
               </li>
+              
             </ul>
           </div>
           <button className="menu-toggle" onClick={toggleMenu}>
