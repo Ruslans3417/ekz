@@ -4,7 +4,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 400px auto 0; /* добавлен отступ сверху на 400px */
 }
 .footer {
   position: relative;
@@ -15,7 +15,7 @@
   background-color: #f8f8f8;
   padding: 20px 0;
   box-sizing: border-box;
-  z-index: 9999;
+  
 }
 .main-content {
   margin-bottom: 100px;
@@ -45,7 +45,7 @@
 
       .footer-contact-list li,
       .footer-social-list li {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       }
       
       .footer-contact-list li:last-child,
@@ -61,23 +61,26 @@
       
       .footer-contact-list a:hover,
       .footer-social-list a:hover {
-      color: #ebd8d8;
+      color: #e41a1a;
       }
       
 
       .footer-social-list a {
         font-size: 1rem;
+        margin-left: 40px;
       }
       
       @media (max-width: 768px) {
         .footer-social-list a {
           font-size: 0.8rem;
+          
         }
       }
       
       @media (max-width: 576px) {
         .footer-social-list a {
           font-size: 1rem;
+          margin-left: 10px;
         }
       }
       .footer-bottom {
@@ -100,6 +103,7 @@
 
 .footer-section-content {
   margin-top: 16px;
+  margin-left: -30px;
 }
 
 .block {
@@ -133,14 +137,23 @@
 
   .footer-social-list p {
     margin: 0;
+    font-size: 20px;
+    
   }
 
   .footer-contact-list p {
     margin: 0;
+    font-size: 20px;
+    margin-left: 20px;
+    
   }
 
-  .footer-section-list p {
+  .footer-section-content p {
     margin: 0;
+    font-size: 20px;
+    
   }
 
-  
+  .footer-heading{
+margin-left: 20px;
+  }
