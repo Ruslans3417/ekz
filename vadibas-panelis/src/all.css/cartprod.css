@@ -1,35 +1,44 @@
-@media (max-width: 767px) {
-    .card-container .ant-col {
-    width: 50%;
-    }
-    }
-    
-    @media screen and (max-width: 767px) {
-    .card-container .ant-col {
-    width: 50%;
-    }
-    }
-    
-    @media (min-width: 768px) and (max-width: 991px) {
-    .card-container .ant-col {
-    width: 50%;
-    }
-    }
-    
-    .card-container {
-    display: flex;
-    justify-content: center; /* центрируем контейнер по горизонтали */
-    align-items: center; /* центрируем контейнер по вертикали */
-    flex-wrap: wrap;
-    padding: 20px;
-    width: 70%;
-    height: auto;
-    border-radius: 5px;
-    margin: 0 auto;   
-    font-weight: bold;
-    }
-    
-    .card-container .ant-col {
-    width: 33.33%; /* задаем ширину элементам .ant-col */
-    }
+.card-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    max-width: 970px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+  .card-container .ant-col {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
   
+  .card-container .ant-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .card-container .ant-col {
+      flex-basis: calc(33.33% - 20px);
+      max-width: calc(33.33% - 20px);
+      margin: 10px;
+    }
+    .card-container {
+      max-width: 1200px;
+    }
+  }
+
+  .card-container.category1 {
+    max-width: 6000px;
+  }
+  
+  .card-container.category2 {
+    max-width: 8000px;
+  }
+  
+  .card-container.category3 {
+    max-width: 8000px;
+  }
+
+  .container {
+    text-align: center;
+  }
