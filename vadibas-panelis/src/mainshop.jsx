@@ -221,7 +221,7 @@ const products = [
     name: "Тушь для ресниц",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image: "https://via.placeholder.com/350",
     category: "Лицо",
   },
 
@@ -246,7 +246,7 @@ const CatalogPage = () => {
   return (
     <div style={{ padding: "24px" }}>
     <h1 style={{ marginTop: "40px" }}>Каталог продуктов</h1>
-    <div style={{ marginBottom: "16px" }}>
+    <div>
       {productTypes.map((type) => (
         <Button
           key={type}
