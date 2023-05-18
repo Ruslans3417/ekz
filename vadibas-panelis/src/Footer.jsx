@@ -8,15 +8,13 @@ function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="block">
-          <h3 className="footer-heading"style={{marginTop: "50px"}}>Компания</h3>
+          <h3 className="footer-heading">Компания</h3>
           <div className="footer-section-content">
-          <ul className="footer-contact-list">
             <p>Мы - компания, которая предлагает косметику высокого качества по доступным ценам.</p>
-            </ul>
           </div>
         </div>
         <div className="block">
-          <h3 className="footer-heading"style={{marginTop: "50px"}}>Контакты</h3>
+          <h3 className="footer-heading">Контакты</h3>
           <div className="footer-section-content">
             <ul className="footer-contact-list">
               <p>Телефон: +1 123 456 7890</p>
@@ -26,7 +24,7 @@ function Footer() {
           </div>
         </div>
         <div className="block">
-          <h3 className="footer-heading"style={{marginTop: "50px"}}>Социальные сети</h3>
+          <h3 className="footer-heading">Социальные сети</h3>
           <div className="footer-section-content">
             <ul className="footer-social-list">
               <p>

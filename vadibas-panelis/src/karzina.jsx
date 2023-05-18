@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './all.css/Karzina.css';
+
 function Cart() {
   const [items, setItems] = useState([]);
 
@@ -23,13 +23,11 @@ function Cart() {
   const total = items.reduce((acc, item) => acc + item.price, 0);
 
   return (
-<div class="cart">
-  <h2>Корзина товаров</h2>
-  <ul class="cart-items">
-   
-  </ul>
-  <button class="checkout-button">Заказать</button>
-</div>
+    <div>
+      <h2>Cart</h2>
+      <ul>{cartItems}</ul>
+      <div>Total: ${total}</div>
+    </div>
   );
 }
 

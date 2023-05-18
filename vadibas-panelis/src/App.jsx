@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './all.css/App.css';
 import Header from './heder';
 import { Carousel, Card, Button, Typography } from 'antd';
-import Footer from './Footer'; 
+import Footer from './Footer';
 import './all.css/car.css';
 
 const { Title } = Typography;

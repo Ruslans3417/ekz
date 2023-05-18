@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, Col, Row, Button } from "antd";
 import './all.css/cartprod.css';
 
@@ -9,7 +9,6 @@ const products = [
     brand: "Maybelline",
     price: 10.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },
   {
     id: 2,
@@ -17,7 +16,6 @@ const products = [
     brand: "L'Oreal",
     price: 14.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },
   {
     id: 3,
@@ -25,7 +23,6 @@ const products = [
     brand: "Rimmel",
     price: 8.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
   {
     id: 4,
@@ -33,7 +30,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },
   {
     id: 5,
@@ -41,7 +37,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },
   {
     id: 6,
@@ -49,7 +44,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
   {
     id: 7,
@@ -57,7 +51,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },
   {
     id: 8,
@@ -65,7 +58,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },
   {
     id: 9,
@@ -73,7 +65,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
   {
     id: 10,
@@ -81,7 +72,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },
   {
     id: 11,
@@ -89,7 +79,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },
   {
     id: 12,
@@ -97,7 +86,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
     {
     id: 13,
@@ -105,14 +93,12 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },  {
     id: 14,
     name: "Тушь для ресниц",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },
   {
     id: 15,
@@ -120,7 +106,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
     {
     id: 16,
@@ -128,14 +113,12 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },  {
     id: 17,
     name: "Тушь для ресниц",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },
   {
     id: 18,
@@ -143,7 +126,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
   {
     id: 19,
@@ -151,7 +133,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },
   {
     id: 20,
@@ -159,7 +140,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },
   {
     id: 21,
@@ -167,7 +147,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
   {
     id: 22,
@@ -175,7 +154,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },
   {
     id: 23,
@@ -183,7 +161,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },
   {
     id: 24,
@@ -191,7 +168,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
     {
     id: 25,
@@ -199,7 +175,6 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
   },
     {
     id: 26,
@@ -207,37 +182,24 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
   },  {
     id: 27,
     name: "Тушь для ресниц",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
   },
   {
     id: 28,
     name: "Тушь для ресниц",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/350",
-    category: "Лицо",
+    image: "https://via.placeholder.com/150",
   },
 
 ];
 
-
-const productTypes = ["Помада", "Тональный крем", "Пудра"]; // Создаем массив типов продуктов
-
-
-const lipProducts = products.filter((product) => product.category === "Губы");
-const faceProducts = products.filter((product) => product.category === "Лицо");
-const eyeProducts = products.filter((product) => product.category === "Глаза");
-
 const CatalogPage = () => {
-  const [selectedType, setSelectedType] = useState(null); // Добавляем состояние для выбранного типа продукта
- 
   const handleAddToCart = (product) => {
     // Действия при добавлении продукта в корзину
     console.log(`Продукт "${product.name}" добавлен в корзину`);
@@ -245,24 +207,10 @@ const CatalogPage = () => {
 
   return (
     <div style={{ padding: "24px" }}>
-    <h1 style={{ marginTop: "40px" }}>Каталог продуктов</h1>
-    <div>
-      {productTypes.map((type) => (
-        <Button
-          key={type}
-          type={selectedType === type ? "primary" : "default"} // Выделяем выбранный тип
-          onClick={() => setSelectedType(type)} // Обновляем выбранный тип при клике на кнопку
-          style={{ marginRight: "8px" }}
-        >  
-          
-          {type}
-        </Button>
-      ))}<Button onClick={() => setSelectedType(null)}>Сбросить фильтр</Button>
-    </div>
-    <Row gutter={[16, 16]} className="card-container">
-      {products
-        .filter((product) => selectedType ? product.name === selectedType : true) // Фильтруем продукты по выбранному типу
-        .map((product) => (
+      
+      <h1 style={{ marginTop: "40px"}}>Каталог продуктов</h1>
+      <Row gutter={[16, 16]} className="card-container">
+        {products.map((product) => (
           <Col xs={24} sm={12} md={12} lg={8} key={product.id}> {/* Изменение на md={12} и lg={8} */}
             <Card
               cover={<img alt={product.name} src={product.image} />}
