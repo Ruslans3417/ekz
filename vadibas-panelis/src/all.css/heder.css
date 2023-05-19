@@ -27,16 +27,13 @@
   outline: none;
   padding: 0;
   position: relative;
- 
 }
 
 .navbar-menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-
 
 .navbar-menu ul {
   list-style: none;
@@ -58,83 +55,71 @@
 
 @media screen and (max-width: 767px) {
   .menu-toggle {
-  display: block;
-  }
-  
-  .navbar-menu {
-  display: none;
-  position: absolute;
-  top: 104px; /* добавленный отступ */
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  }
-  
-  .navbar-menu ul {
-  flex-direction: column;
-  align-items: center;
-  }
-  
-  .navbar-menu li {
-  margin: 1rem 0;
-  }
-  
-  .navbar-menu a {
-  font-size: 1.5rem;
-  }
-  
-  .navbar.show .navbar-menu {
-  display: flex;
-  }
+    display: block;
   }
 
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-menu li {
+    margin: 1rem 0;
+  }
+
+  .navbar-menu a {
+    font-size: 1.5rem;
+  }
+
+  .navbar.show .navbar-menu {
+    display: flex;
+  }
+}
 
 /* Медиа-запрос для мобильных устройств */
 @media screen and (max-width: 767px) {
-    .navbar-menu {
-      display: none; /* скрыть меню */
-    }
-    .menu-toggle {
-      display: block; /* показать кнопку меню */
-    }
-    @media screen and (max-width: 767px) {
-      .navbar {
-        position: relative;
-      }
-      .navbar .logo {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-    .navbar ul {
-      position: absolute; /* установить позицию абсолютно */
-      top: 100%; /* установить отступ сверху на 100% высоты */
-      left: 0; /* установить отступ слева на 0 */
-      width: 100%; /* установить ширину на 100% */
-      background-color: #fff; /* задать фоновый цвет */
-      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); /* задать тень */
-    }
-    .navbar ul li {
-      display: block; /* задать блочный тип */
-      text-align: center; /* выровнять по центру */
-      margin: 20px 0; /* установить отступ сверху и снизу */
-    }
-    .navbar ul li a {
-      display: block; /* задать блочный тип */
-      padding: 10px; /* задать отступы внутри */
-      color: #333; /* задать цвет текста */
-      font-size: 18px; /* увеличить размер шрифта */
-      text-decoration: none; /* убрать подчеркивание */
-      
-    }
-  }
   .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-    background-color: #ebd8d8;
+    position: relative;
   }
+  .navbar .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .navbar ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  .navbar ul li {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
