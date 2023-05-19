@@ -11,6 +11,8 @@ import Dostavka from './dostavka';
 import Blog from './blog';
 import Reg from './reg';
 import Login from './login';
+import Admin from './admin';
+import Zap from './zap';
 
 
 function Header() {
@@ -33,12 +35,8 @@ function Header() {
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
                 <a href="/mainshop">Каталог</a> {/* Изменили ссылку на /mainshop */}
               </li>
-
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <a href="/reg">reg</a> {/* Изменили ссылку на /mainshop */}
-              </li>
-              <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <a href="/login">login</a> {/* Изменили ссылку на /mainshop */}
+                <a href="/admin">admin</a> {/* Изменили ссылку на /mainshop */}
               </li>
 
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
@@ -53,6 +51,9 @@ function Header() {
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
               <a href="/dostavka">Доставка</a> {/* Изменяем ссылку на /dostavka */}
               </li>
+               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
+                <a href="/login">login</a> {/* Изменили ссылку на /mainshop */}
+              </li>
             </ul>
           </div>
           <button className="menu-toggle" onClick={toggleMenu}>
@@ -61,9 +62,9 @@ function Header() {
         </nav>
         <Routes> {/* Добавляем компонент Routes */}
         <Route exact path="/reg" element={<Reg />} /> {/* Изменяем компонент MainShop на элемент */}
+        <Route exact path="/zap" element={<Zap />} /> {/* Изменяем компонент MainShop на элемент */}
         <Route exact path="/login" element={<Login />} /> {/* Изменяем компонент MainShop на элемент */}
-
-
+        <Route exact path="/admin" element={<Admin />} /> {/* Изменяем компонент MainShop на элемент */}
         <Route exact path="/main" element={<Main />} /> {/* Изменяем компонент MainShop на элемент */}
         <Route exact path="/blog" element={<Blog />} /> {/* Изменяем компонент MainShop на элемент */}
         <Route exact path="/dostavka" element={<Dostavka />} /> {/* Добавляем маршрут для /dostavka */}

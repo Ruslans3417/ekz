@@ -13,23 +13,23 @@ const ContactPage = () => {
 
       <Title level={2}>Our Location</Title>
       <Paragraph>
-        123 Main Street, Suite 101 <br />
-        Anytown, USA 12345
+      Graudu iela 27 <br />
+         Liepāja, LV-3401
       </Paragraph>
 
       <Title level={2}>Contact Information</Title>
       <Paragraph>
-        Phone: (123) 456-7890 <br />
+        Phone: +371 <br />
         Email: info@cosmetics.com <br />
-        <a href="https://www.instagram.com/your_instagram_profile" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/crystalino.beauty/" target="_blank" rel="noopener noreferrer">
           <InstagramOutlined /> Instagram
         </a>
         <br />
-        <a href="https://www.facebook.com/your_facebook_profile" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/crystalino.shop" target="_blank" rel="noopener noreferrer">
           <FacebookOutlined /> Facebook
         </a>
         <br />
-        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+        <a href="https://api.whatsapp.com/send?phone=37120061409&text=Labdien%21%0AV%C4%93los%20pierakst%C4%ABties%20uz%20proced%C5%ABru" target="_blank" rel="noopener noreferrer">
           <WhatsAppOutlined /> WhatsApp
         </a>
       </Paragraph>

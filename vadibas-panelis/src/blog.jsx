@@ -16,19 +16,19 @@ const BoxContainer = () => {
     <div className="box-container">
       <Box
         imageSrc="https://picsum.photos/id/237/200/300"
-        link="/reg"
+        link="/zap"
       />
       <Box
         imageSrc="https://picsum.photos/id/238/200/300"
-        link="/reg"
+        link="/zap"
       />
       <Box
         imageSrc="https://picsum.photos/id/239/200/300"
-        link="/reg"
+        link="/zap"
       />
       <Box
         imageSrc="https://picsum.photos/id/240/200/300"
-        link="/reg"
+        link="/zap"
       />
     </div>
   );

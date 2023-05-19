@@ -1,7 +1,8 @@
-import React from "react";
-import { Card, Col, Row, Button } from "antd";
+import React, { useState } from "react";
+import { Card, Col, Row, Button, Select } from "antd";
 import './all.css/cartprod.css';
 
+const { Option } = Select;
 const products = [
   {
     id: 1,
@@ -9,6 +10,7 @@ const products = [
     brand: "Maybelline",
     price: 10.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },
   {
     id: 2,
@@ -16,6 +18,7 @@ const products = [
     brand: "L'Oreal",
     price: 14.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },
   {
     id: 3,
@@ -23,214 +26,262 @@ const products = [
     brand: "Rimmel",
     price: 8.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
   {
     id: 4,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },
   {
     id: 5,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },
   {
     id: 6,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
   {
     id: 7,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },
   {
     id: 8,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },
   {
     id: 9,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
   {
     id: 10,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },
   {
     id: 11,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },
   {
     id: 12,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
     {
     id: 13,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },  {
     id: 14,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },
   {
     id: 15,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
     {
     id: 16,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },  {
     id: 17,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },
   {
     id: 18,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
   {
     id: 19,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },
   {
     id: 20,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },
   {
     id: 21,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
   {
     id: 22,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },
   {
     id: 23,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },
   {
     id: 24,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
     {
     id: 25,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Лицо",
   },
     {
     id: 26,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Губы",
   },  {
     id: 27,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
+    category: "Глаза",
   },
   {
     id: 28,
-    name: "Тушь для ресниц",
+    name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image: "https://via.placeholder.com/350",
+    category: "Лицо",
   },
 
 ];
 
+const productTypes = ["Помада", "Тональный крем", "Пудра"];
+//выбор для селектора
+
 const CatalogPage = () => {
+  const [selectedType, setSelectedType] = useState(null);
+
   const handleAddToCart = (product) => {
-    // Действия при добавлении продукта в корзину
     console.log(`Продукт "${product.name}" добавлен в корзину`);
   };
 
   return (
     <div style={{ padding: "24px" }}>
-      
-      <h1 style={{ marginTop: "40px"}}>Каталог продуктов</h1>
+      <h1 style={{ marginTop: "40px" }}>Каталог продуктов</h1>
+      <div>
+        <Select
+          defaultValue="Все продукты"
+          style={{ width: 200, marginRight: "6px" }}
+          onChange={(value) => setSelectedType(value)}
+        >
+          <Option value={null}>Все продукты</Option>
+          {productTypes.map((type) => (
+            <Option key={type} value={type}>
+              {type}
+            </Option>
+          ))}
+        </Select>
+        <Button onClick={() => setSelectedType(null)}>Сбросить фильтр</Button>
+      </div>
       <Row gutter={[16, 16]} className="card-container">
-        {products.map((product) => (
-          <Col xs={24} sm={12} md={12} lg={8} key={product.id}> {/* Изменение на md={12} и lg={8} */}
-            <Card
-              cover={<img alt={product.name} src={product.image} />}
-              hoverable
-              actions={[
-                <Button
-                  type="primary"
-                  onClick={() => handleAddToCart(product)}
-                >
-                  Добавить в корзину
-                </Button>,
-              ]}
-            >
-              <Card.Meta title={product.name} description={product.brand} />
-              <div style={{ marginTop: "8px", fontWeight: "bold" }}>
-                Цена: ${product.price}
-              </div>
-            </Card>
-          </Col>
-        ))}
+        {products
+          .filter((product) =>
+            selectedType ? product.name === selectedType : true
+          )
+          .map((product) => (
+            <Col xs={24} sm={12} md={12} lg={8} key={product.id}>
+              <Card
+                cover={<img alt={product.name} src={product.image} />}
+                hoverable
+                actions={[
+                  <Button
+                    type="primary"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    Добавить в корзину
+                  </Button>,
+                ]}
+              >
+                <Card.Meta title={product.name} description={product.brand} />
+                <div style={{ marginTop: "8px", fontWeight: "bold" }}>
+                  Цена: ${product.price}
+                </div>
+              </Card>
+            </Col>
+          ))}
       </Row>
     </div>
   );

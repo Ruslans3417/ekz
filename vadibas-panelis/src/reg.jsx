@@ -93,7 +93,6 @@ import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Se
           }}
         >
           <Option value="USD">$</Option>
-          <Option value="CNY">¥</Option>
         </Select>
       </Form.Item>
     );
@@ -110,6 +109,7 @@ import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Se
       value: website,
     }));
     return (
+      <div className="container">
       <Form
         {...formItemLayout}
         form={form}
@@ -242,74 +242,7 @@ import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Se
             }}
           />
         </Form.Item>
-  
-        <Form.Item
-          name="website"
-          label="Website"
-          rules={[
-            {
-              required: true,
-              message: 'Please input website!',
-            },
-          ]}
-        >
-          <AutoComplete options={websiteOptions} onChange={onWebsiteChange} placeholder="website">
-            <Input />
-          </AutoComplete>
-        </Form.Item>
-  
-        <Form.Item
-          name="intro"
-          label="Intro"
-          rules={[
-            {
-              required: true,
-              message: 'Please input Intro',
-            },
-          ]}
-        >
-          <Input.TextArea showCount maxLength={100} />
-        </Form.Item>
-  
-        <Form.Item
-          name="gender"
-          label="Gender"
-          rules={[
-            {
-              required: true,
-              message: 'Please select gender!',
-            },
-          ]}
-        >
-          <Select placeholder="select your gender">
-            <Option value="male">Male</Option>
-            <Option value="female">Female</Option>
-            <Option value="other">Other</Option>
-          </Select>
-        </Form.Item>
-  
-        <Form.Item label="Captcha" extra="We must make sure that your are a human.">
-          <Row gutter={8}>
-            <Col span={12}>
-              <Form.Item
-                name="captcha"
-                noStyle
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input the captcha you got!',
-                  },
-                ]}
-              >
-                <Input />
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Button>Get captcha</Button>
-            </Col>
-          </Row>
-        </Form.Item>
-  
+
         <Form.Item
           name="agreement"
           valuePropName="checked"
@@ -331,6 +264,7 @@ import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Se
           </Button>
         </Form.Item>
       </Form>
+      </div>
     );
   };
   export default App;
