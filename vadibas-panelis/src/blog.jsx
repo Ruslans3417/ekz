@@ -6,7 +6,7 @@ const Box = ({ imageSrc, link }) => {
   return (
     <div className="box">
       <img src={imageSrc} alt="Box Image" />
-      <Link to={link}>Записаться</Link>
+      <Link to={link} style={{ backgroundColor: 'purple' }}>Записаться</Link>
     </div>
   );
 };
@@ -30,6 +30,39 @@ const BoxContainer = () => {
         imageSrc="https://picsum.photos/id/240/200/300"
         link="/zap"
       />
+            <Box
+        imageSrc="https://picsum.photos/id/237/200/300"
+        link="/zap"
+      />
+      <Box
+        imageSrc="https://picsum.photos/id/238/200/300"
+        link="/zap"
+      />
+      <Box
+        imageSrc="https://picsum.photos/id/239/200/300"
+        link="/zap"
+      />
+      <Box
+        imageSrc="https://picsum.photos/id/240/200/300"
+        link="/zap"
+      />
+            <Box
+        imageSrc="https://picsum.photos/id/237/200/300"
+        link="/zap"
+      />
+      <Box
+        imageSrc="https://picsum.photos/id/238/200/300"
+        link="/zap"
+      />
+      <Box
+        imageSrc="https://picsum.photos/id/239/200/300"
+        link="/zap"
+      />
+      <Box
+        imageSrc="https://picsum.photos/id/240/200/300"
+        link="/zap"
+      />
+
     </div>
   );
 };

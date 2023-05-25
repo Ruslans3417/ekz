@@ -1,5 +1,7 @@
-import { AutoComplete, Button, Cascader, Checkbox, Col, Form, Input, InputNumber, Row, Select } from 'antd';
+import { AutoComplete, Button, Cascader, Col, Form, Input, InputNumber, Radio, Row, Select, Checkbox } from 'antd';
 import { useState } from 'react';
+
+import './all.css/reg.css';
 
 import './all.css/reg.css';
 
@@ -80,8 +82,8 @@ const App = () => {
           width: 70,
         }}
       >
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
+        <Option value="371">+371</Option>
+        <Option value="7">+7</Option>
       </Select>
     </Form.Item>
   );
@@ -109,7 +111,34 @@ const App = () => {
     value: website,
   }));
 
-  const checkBoxOptions = Array(10).fill().map((_, index) => ({ label: `Option ${index + 1}`, value: `option-${index + 1}` }));
+  const checkBoxOptions1 = [
+    { label: 'Pirmdiena', value: 'option-1' },
+    { label: 'Otrdiena', value: 'option-2' },
+    { label: 'Trešdiena', value: 'option-3' },
+    { label: 'Ceturtdiena', value: 'option-4' },
+    { label: 'Piektdiena', value: 'option-5' },
+    { label: 'Sestdiena', value: 'option-6' },
+  ];
+
+  const checkBoxOptions2 = [
+    { label: '13:00 (tikai sestdien)', value: 'option-7' },
+    { label: '15:30', value: 'option-8' },
+    { label: '17:30', value: 'option-9' },
+    { label: '10:00 (tikai sestdien)', value: 'option-10' },
+  ];
+
+  const procedureOptions = [
+    { label: 'Pilnā sejas kopšanas procedūra', value: 'procedure-1' },
+    { label: 'Pīlinga procedūra', value: 'procedure-2' },
+    { label: 'Sejas tīrīšana', value: 'procedure-3' },
+    { label: 'Atjaunojošā procedūra ar alginatu masku', value: 'procedure-4' },
+    { label: 'Masāža', value: 'procedure-5' },
+    { label: 'Carboxy terapija', value: 'procedure-6' },
+    { label: 'Darsonvalizācija', value: 'procedure-7' },
+    { label: 'Konsultācija', value: 'procedure-8' },
+    { label: 'Uzacis/skropstas', value: 'procedure-9' },
+
+  ];
 
   return (
     <div className="container">
@@ -120,13 +149,15 @@ const App = () => {
         onFinish={onFinish}
         initialValues={{
           residence: ['zhejiang', 'hangzhou', 'xihu'],
-          prefix: '86',
+          prefix: '+371',
         }}
         style={{
           maxWidth: 600,
         }}
         scrollToFirstError
       >
+
+
         <Form.Item
           name="Vards"
           label="Vards"
@@ -144,41 +175,62 @@ const App = () => {
           <Input />
         </Form.Item>
 
-        <Form.Item
-          name="phone"
-          label="Phone Number"
-          rules={[
-            {
-              required: true,
-              message: 'Please input your phone number!',
-            },
-          ]}
-        >
-          <Input
-            addonBefore={prefixSelector}
-            style={{
-              width: '100%',
-            }}
-          />
+        <Form.Item label="Процедура" name="procedure">
+          <Select>
+            {procedureOptions.map((option) => (
+              <Option key={option.value} value={option.value}>{option.label}</Option>
+            ))}
+          </Select>
         </Form.Item>
+        
+        <Form.Item
+  name="phone"
+  label="Phone Number"
+  rules={[
+    {
+      required: true,
+      message: 'Please input your phone number!',
+    },
+  ]}
+>
+  <Input
+    addonBefore={prefixSelector}
+    style={{
+      width: '100%',
+    }}
+    maxLength={8} // Ограничение до 8 символов
+  />
+</Form.Item>
 
-        <Form.Item label="Checkbox Group">
-          <Checkbox.Group>
+        <Form.Item label="Checkbox Group 1" name="group1">
+          <Radio.Group>
             <Row>
-              {checkBoxOptions.map((option) => (
+              {checkBoxOptions1.map((option) => (
                 <Col span={8} key={option.value}>
-                  <Checkbox value={option.value}>{option.label}</Checkbox>
+                  <Radio value={option.value}>{option.label}</Radio>
                 </Col>
               ))}
             </Row>
-          </Checkbox.Group>
+          </Radio.Group>
+        </Form.Item>
+
+        <Form.Item label="Checkbox Group 2" name="group2">
+          <Radio.Group>
+            <Row>
+              {checkBoxOptions2.map((option) => (
+                <Col span={8} key={option.value}>
+                  <Radio value={option.value}>{option.label}</Radio>
+                </Col>
+              ))}
+            </Row>
+          </Radio.Group>
         </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
-            Register
-          </Button>
-        </Form.Item>
+  <Button type="primary" htmlType="submit" style={{ backgroundColor: 'purple' }}>
+    Register
+  </Button>
+</Form.Item>
       </Form>
     </div>
   );
