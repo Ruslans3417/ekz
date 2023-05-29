@@ -66,19 +66,19 @@ ja jūs uzticēsiet man rūpes par jūsu skaistumu un ādas veselību!
     <div>
       <img src="https://via.placeholder.com/100x50" alt="review" style={{ width: '50%' }} />
       <div style={{ backgroundColor: 'gray', height: '30px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '40px' }}>
-        <p>Крема</p>
+        <p>Krēmi </p>
       </div>
     </div>
     <div>
       <img src="https://via.placeholder.com/100x50" alt="review" style={{ width: '50%' }} />
       <div style={{ backgroundColor: 'gray', height: '30px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '40px' }}>
-        <p>Патчи</p>
+        <p>Putekļi</p>
       </div>
     </div>
     <div>
       <img src="https://via.placeholder.com/100x50" alt="review" style={{ width: '50%' }} />
       <div style={{ backgroundColor: 'gray', height: '30px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '40px' }}>
-        <p>Пилинг и скраб</p>
+        <p>Skābošana un skrubs</p>
       </div>
     </div>
   </Carousel>
