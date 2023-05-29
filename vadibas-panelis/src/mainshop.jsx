@@ -10,7 +10,7 @@ const products = [
     brand: "Maybelline",
     price: 10.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const products = [
     brand: "L'Oreal",
     price: 14.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const products = [
     brand: "Rimmel",
     price: 8.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },
   {
     id: 6,
@@ -50,7 +50,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
   {
     id: 7,
@@ -58,7 +58,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },
   {
     id: 8,
@@ -66,7 +66,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },
   {
     id: 9,
@@ -74,7 +74,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
   {
     id: 10,
@@ -82,7 +82,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },
   {
     id: 11,
@@ -90,7 +90,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },
   {
     id: 12,
@@ -98,7 +98,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
     {
     id: 13,
@@ -106,14 +106,14 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },  {
     id: 14,
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },
   {
     id: 15,
@@ -121,7 +121,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
     {
     id: 16,
@@ -129,14 +129,14 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },  {
     id: 17,
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },
   {
     id: 18,
@@ -144,7 +144,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
   {
     id: 19,
@@ -152,7 +152,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },
   {
     id: 20,
@@ -160,7 +160,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },
   {
     id: 21,
@@ -168,7 +168,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
   {
     id: 22,
@@ -176,7 +176,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },
   {
     id: 23,
@@ -184,7 +184,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },
   {
     id: 24,
@@ -192,7 +192,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
     {
     id: 25,
@@ -200,7 +200,7 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Лицо",
+    category: "Seja",
   },
     {
     id: 26,
@@ -208,14 +208,14 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Губы",
+    category: "Lūpas",
   },  {
     id: 27,
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/150",
-    category: "Глаза",
+    category: "Acis",
   },
   {
     id: 28,
@@ -223,12 +223,12 @@ const products = [
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/350",
-    category: "Лицо",
+    category: "Seja",
   },
 
 ];
 
-const productTypes = ["Помада", "Тональный крем", "Пудра"];
+const productTypes = ["Lūpu krāsa", "Tonālais krēms", "Pūdera"];
 //выбор для селектора
 
 const CatalogPage = () => {
@@ -240,21 +240,21 @@ const CatalogPage = () => {
 
   return (
     <div style={{ padding: "24px" }}>
-      <h1 style={{ marginTop: "40px" }}>Каталог продуктов</h1>
+      <h1 style={{ marginTop: "40px" }}>Produktu katalogs</h1>
       <div>
         <Select
-          defaultValue="Все продукты"
+          defaultValue="Visi produkti"
           style={{ width: 200, marginRight: "6px" }}
           onChange={(value) => setSelectedType(value)}
         >
-          <Option value={null}>Все продукты</Option>
+          <Option value={null}>Visi produkti</Option>
           {productTypes.map((type) => (
             <Option key={type} value={type}>
               {type}
             </Option>
           ))}
         </Select>
-        <Button onClick={() => setSelectedType(null)}>Сбросить фильтр</Button>
+        <Button onClick={() => setSelectedType(null)}>Notīrīt filtru</Button>
       </div>
       <Row gutter={[16, 16]} className="card-container">
         {products
@@ -272,7 +272,7 @@ const CatalogPage = () => {
                   onClick={() => handleAddToCart(product)}
                   style={{ backgroundColor: '#9a7dac' }}
                 >
-                  Добавить в корзину
+                  Pievienot grozam
                 </Button>,
                 ]}
               >
