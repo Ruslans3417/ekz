@@ -6,7 +6,7 @@ const Box = ({ imageSrc, link }) => {
   return (
     <div className="box">
       <img src={imageSrc} alt="Box Image" />
-      <Link to={link}>Записаться</Link>
+      <Link to={link}>Reģistrēties</Link>
     </div>
   );
 };
