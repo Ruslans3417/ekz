@@ -8,25 +8,25 @@ function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="block">
-          <h3 className="footer-heading"style={{marginTop: "50px"}}>Компания</h3>
+          <h3 className="footer-heading"style={{marginTop: "50px"}}>Uzņēmums</h3>
           <div className="footer-section-content">
           <ul className="footer-contact-list">
-            <p>Мы - компания, которая предлагает косметику высокого качества по доступным ценам.</p>
+            <p>Mēs esam uzņēmums, kas piedāvā augstas kvalitātes kosmētiku par pieejamām cenām.</p>
             </ul>
           </div>
         </div>
         <div className="block">
-          <h3 className="footer-heading"style={{marginTop: "50px"}}>Контакты</h3>
+          <h3 className="footer-heading"style={{marginTop: "50px"}}>Kontakti</h3>
           <div className="footer-section-content">
             <ul className="footer-contact-list">
-              <p>Телефон: +371 20061409</p>
-              <p>Email: crystalino.shop@gmail.com</p>
-              <p>Адрес: Graudu iela 27</p>
+              <p>Telefons: +371 20061409</p>
+              <p>E-pasts: crystalino.shop@gmail.com</p>
+              <p>Adrese: Graudu iela 27</p>
             </ul>
           </div>
         </div>
         <div className="block">
-          <h3 className="footer-heading"style={{marginTop: "50px"}}>Социальные сети</h3>
+          <h3 className="footer-heading"style={{marginTop: "50px"}}>Sociālie tīkli</h3>
           <div className="footer-section-content">
             <ul className="footer-social-list">
               <p>
