@@ -13,44 +13,38 @@ function TextWithButton() {
     <div>
         
       <p style={{marginTop: "100px", marginBottom: "201px", marginLeft: "40px", marginRight: "40px"}}>
-      <h2 style={{marginTop: "0px"}}>Оплата и доставка</h2>
+      <h2 style={{marginTop: "0px"}}>Apmaksa un piegāde</h2>
       <p>
-        Оплата заказа получая в Лиепае
-        После оформления и подтверждения вашего заказа на указанный вами номер телефона 
-        будет отправлено сообщение о подтверждении заказа. Получая заказ в пределах города, 
-        оплата возможна наличными.
+        Pasūtījuma apmaksa saņemot Liepājā. Pēc pasūtījuma noformēšanas un apstiprināšanas uz jūsu norādīto tālruņa numuru tiks 
+        nosūtīts pasūtījuma apstiprinājuma ziņojums.
+        Saņemot pasūtījumu pilsētas ietvaros, maksājums ir iespējams skaidrā naudā.
       </p>
-      <h2>Оплата заказа получая по Латвии</h2>
+      <h2>Pasūtījuma apmaksa saņemot Latvijā.</h2>
       <p>
-        После оформления и подтверждения вашего заказа на указанный вами номер телефона
-        будет отправлено сообщение о подтверждении заказа и на э-майл будет отправлен
-        счет для оплаты. Оплатить счет можно банковским перечислением,
-        после получения оплаты заказ будет выслан вам.
-        Срок оплаты счёта 2 рабочих дня. Если счет не был оплачен в течении 2 дней,
-        он аннулируется
+        Pēc pasūtījuma noformēšanas un apstiprināšanas uz jūsu norādīto tālruņa numuru tiks nosūtīts pasūtījuma apstiprinājuma ziņojums,
+        un uz e-pasta tiks nosūtīta rēķina apmaksa.
+        Rēķinu var apmaksāt ar bankas pārskaitījumu, un pēc apmaksas saņemšanas pasūtījums tiks nosūtīts jums.
+        Rēķina apmaksa jāveic 2 darba dienu laikā. Ja rēķins netiek apmaksāts 2 dienu laikā, tas tiks anulēts.
       </p>
-      <h2>Доставка</h2>
+      <h2>Piegāde</h2>
       <p>
-        Доставка посылок производится нашими партнёрами Omniva и DPD по Латвии, 
-        странам Балтии и другим странам мира.
-        Доставка осуществляется каждый день (кроме выходных).
-        Цена доставки:
-        - Omniva пакомат по Латвии - от 2,88 Eur
-        - DPD пункты выдачи - от 2,88 Eur
-        - DPD пункты выдачи в Литве и Эстонии - от 6,90 Eur
-        - Worldwhide shipping *
-        *Что бы узнать стоимость доставки в другие страны мира, свяжитесь с нами по почте 
-        crystalino.shop@gmail.com
-        После получения оплаты, мы упаковываем Ваш заказ, регистрируем в системе и отправляем
-        на Ваш номер телефона код для отслеживания посылки. Чтобы получить посылку
-        в указанном вами месте, необходимо дождаться сообщения от выбранного сервиса.
-        По Лиепае посылка доставляется в течении 1−2 дней, а по другим городам Латвии и
-        в течение 1−3 дней.
-        Доставка посылок в пункты выдачи в Литву и Эстонию ув течении 1−2 дней, а
-        в другие страны мира 3−5 дней.
-        Чтобы узнать адрес ближайшего пакомата или пункта выдачи, нажми на линк ниже
-        - Омнива - omniva.lv/privats/adreses
-        - DPD - https://www.dpd.com/lv/lv/sanemsana/pickup-tikls/pickup-punktu-saraksts/</p>
+Sūtījumu piegāde tiek veikta ar mūsu partneriem Omniva un DPD Latvijā, Baltijas valstīs un citās pasaules valstīs. 
+Piegāde notiek katru dienu (izņemot brīvdienas).
+        Piegādes cena: 
+         - Omniva pakomāts Latvijā - no 2,88 EUR 
+         - DPD izsniegšanas punkti - no 2,88 EUR 
+         - DPD izsniegšanas punkti Lietuvā un Igaunijā - no 6,90 EUR 
+         - Piegāde visā pasaulē *
+        * Lai uzzinātu piegādes cenu citām pasaules valstīm, sazinieties ar mums pa e-pastu crystalino.shop@gmail.com
+         Pēc maksājuma saņemšanas mēs sagatavojam un iepakojam jūsu pasūtījumu, reģistrējam to sistēmā un nosūtām jums tālruņa kodu,
+         lai varētu sekot līdzi sūtījumam. Lai saņemtu sūtījumu norādītajā vietā,
+         ir jāgaida paziņojums no izvēlētā pakalpojuma sniedzēja.
+         Liepājā sūtījums tiek piegādāts 1-2 dienu laikā, citos Latvijas pilsētās - 1-3 dienu laikā.
+         Sūtījumu piegāde uz izsniegšanas punktiem Lietuvā un Igaunijā notiek 1-2 dienu laikā, bet uz citām pasaules valstīm - 3-5 dienu laikā.
+         Lai uzzinātu tuvākā pakomāta vai izsniegšanas punkta adresi,
+           noklikšķiniet uz saites zemāk: - Omniva - omniva.lv/privats/adreses - DPD -
+             https://www.dpd.com/lv/lv/sanemsana/pickup-tikls/pickup-punktu-saraksts/
+</p>
           {/* Еще дополнительный текст */}
         </p>
       
