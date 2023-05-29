@@ -33,26 +33,26 @@ function Header() {
             <ul>
               
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <a href="/mainshop">Каталог</a> {/* Изменили ссылку на /mainshop */}
+                <a href="/mainshop">Katalogs</a> {/* Изменили ссылку на /mainshop */}
               </li>
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <a href="/admin">admin</a> {/* Изменили ссылку на /mainshop */}
+                <a href="/admin">Admin</a> {/* Изменили ссылку на /mainshop */}
               </li>
 
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <a href="/blog">Процедуры</a>
+                <a href="/blog">Procedūras</a>
               </li>
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-              <a href="/contact">Контакты</a> {/* Добавляем эту строку */}
+              <a href="/contact">Kontakti</a> {/* Добавляем эту строку */}
               </li>
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <a href="/karzina">Карзина</a>
+                <a href="/karzina">Grozs</a>
               </li>
               <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-              <a href="/dostavka">Доставка</a> {/* Изменяем ссылку на /dostavka */}
+              <a href="/dostavka">Piegāde</a> {/* Изменяем ссылку на /dostavka */}
               </li>
                <li style={{ display: 'inline-block', paddingRight: '0.5cm' }}>
-                <a href="/login">login</a> {/* Изменили ссылку на /mainshop */}
+                <a href="/login">Pieteikties</a> {/* Изменили ссылку на /mainshop */}
               </li>
             </ul>
           </div>
