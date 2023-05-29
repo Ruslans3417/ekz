@@ -36,13 +36,11 @@ function Main() {
             }}
        >
         
-    <h1>Привет!</h1> 
-    ‌Меня зовут Наталия. Я косметолог-эстетист из Лиепаи. Большинство меня знает, как Crystalino
-    ‌Делаю счастливыми девушек, как у себя в кабинете, так и онлайн. 
-    ‌
-    ‌Предлагаю собрать ваш домашний уход, как из профессиональных линеек, так и из корейских средств.
-    ‌
-    ‌Я буду рада, если заботу о вашей красоте и здоровье кожи доверите именно мне!
+    <h1>Sveiki!</h1> 
+Mani sauc Natalija. Es esmu kosmetoloģe-estētiķe no Liepājas.
+Lielākā daļa mani pazīst kā Crystalino. Es padaru meitenes laimīgas gan savā kabinetā, gan tiešsaistē. 
+Piedāvāju veidot jūsu mājas kopšanu, izmantojot profesionālās līnijas un Korejas produktus. Būšu priecīga, 
+ja jūs uzticēsiet man rūpes par jūsu skaistumu un ādas veselību!
     </Title>
         </div> 
       
