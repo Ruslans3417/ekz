@@ -19,8 +19,8 @@ const ContactPage = () => {
 
       <Title level={2}>Contact Information</Title>
       <Paragraph>
-        Phone: +371 <br />
-        Email: info@cosmetics.com <br />
+        Phone: +371 20061409<br />
+        Email: crystalino.shop@gmail.com <br />
         <a href="https://www.instagram.com/crystalino.beauty/" target="_blank" rel="noopener noreferrer">
           <InstagramOutlined /> Instagram
         </a>
@@ -34,12 +34,7 @@ const ContactPage = () => {
         </a>
       </Paragraph>
 
-      <Title level={2}>Business Hours</Title>
-      <Paragraph>
-        Monday - Friday: 9:00 AM - 5:00 PM <br />
-        Saturday: 10:00 AM - 2:00 PM <br />
-        Sunday: Closed
-      </Paragraph>
+
 
       <Title level={2}>Map</Title>
       {/* Вставляем карту с указанием координат точки на Graudu iela 27 в Лиепае */}

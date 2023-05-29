@@ -1,7 +1,9 @@
-import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Select,} from 'antd';
-  import { useState } from 'react';
+import { AutoComplete, Button, Cascader, Checkbox, Col, Form, Input, InputNumber, Row, Select } from 'antd';
+import { useState } from 'react';
+import Database from './database/database.json';
+import Base from './database/base1.js';
 
-  import './all.css/reg.css';
+import './all.css/reg.css';
 
   const { Option } = Select;
   const residences = [
@@ -56,6 +58,7 @@ import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Se
       },
     },
   };
+  
   const tailFormItemLayout = {
     wrapperCol: {
       xs: {
@@ -68,11 +71,16 @@ import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Se
       },
     },
   };
+  
   const App = () => {
     const [form] = Form.useForm();
+  
     const onFinish = (values) => {
       console.log('Received values of form: ', values);
+      // Вызываем функцию saveUserData, передавая данные нового пользователя
+      Database.saveUserData(values);
     };
+    
     const prefixSelector = (
       <Form.Item name="prefix" noStyle>
         <Select
@@ -193,19 +201,7 @@ import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Se
           <Input />
         </Form.Item>
   
-        <Form.Item
-          name="residence"
-          label="Habitual Residence"
-          rules={[
-            {
-              type: 'array',
-              required: true,
-              message: 'Please select your habitual residence!',
-            },
-          ]}
-        >
-          <Cascader options={residences} />
-        </Form.Item>
+
   
         <Form.Item
           name="phone"
@@ -224,40 +220,8 @@ import { AutoComplete,Button,Cascader,Checkbox,Col,Form,Input,InputNumber,Row,Se
             }}
           />
         </Form.Item>
-  
-        <Form.Item
-          name="donation"
-          label="Donation"
-          rules={[
-            {
-              required: true,
-              message: 'Please input donation amount!',
-            },
-          ]}
-        >
-          <InputNumber
-            addonAfter={suffixSelector}
-            style={{
-              width: '100%',
-            }}
-          />
-        </Form.Item>
 
-        <Form.Item
-          name="agreement"
-          valuePropName="checked"
-          rules={[
-            {
-              validator: (_, value) =>
-                value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
-            },
-          ]}
-          {...tailFormItemLayout}
-        >
-          <Checkbox>
-            I have read the <a href="">agreement</a>
-          </Checkbox>
-        </Form.Item>
+     
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
             Register

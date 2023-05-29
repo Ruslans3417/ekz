@@ -263,19 +263,19 @@ const CatalogPage = () => {
           )
           .map((product) => (
             <Col xs={24} sm={12} md={12} lg={8} key={product.id}>
-<Card
-  cover={<img alt={product.name} src={product.image} />}
-  hoverable
-  actions={[
-    <Button
-      type="primary"
-      onClick={() => handleAddToCart(product)}
-      style={{ backgroundColor: 'purple' }}
-    >
-      Добавить в корзину
-    </Button>,
-  ]}
->
+              <Card
+                cover={<img alt={product.name} src={product.image} />}
+                hoverable
+                actions={[
+                  <Button
+                  type="primary"
+                  onClick={() => handleAddToCart(product)}
+                  style={{ backgroundColor: '#9a7dac' }}
+                >
+                  Добавить в корзину
+                </Button>,
+                ]}
+              >
                 <Card.Meta title={product.name} description={product.brand} />
                 <div style={{ marginTop: "8px", fontWeight: "bold" }}>
                   Цена: ${product.price}

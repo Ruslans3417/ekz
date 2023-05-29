@@ -19,9 +19,9 @@ function Footer() {
           <h3 className="footer-heading"style={{marginTop: "50px"}}>Контакты</h3>
           <div className="footer-section-content">
             <ul className="footer-contact-list">
-              <p>Телефон: +371 123 456 7890</p>
-              <p>Email: info@mycosmetics.com</p>
-              <p>Адрес: 123 Main Street, Anytown, USA</p>
+              <p>Телефон: +371 20061409</p>
+              <p>Email: crystalino.shop@gmail.com</p>
+              <p>Адрес: Graudu iela 27</p>
             </ul>
           </div>
         </div>

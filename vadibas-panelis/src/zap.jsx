@@ -1,7 +1,6 @@
-import { AutoComplete, Button, Cascader, Col, Form, Input, InputNumber, Radio, Row, Select, Checkbox } from 'antd';
+import { AutoComplete, Button, Cascader, Col, Form, Input, InputNumber, Radio, Row, Select } from 'antd';
 import { useState } from 'react';
-
-import './all.css/reg.css';
+import { Checkbox } from 'antd';
 
 import './all.css/reg.css';
 
@@ -112,32 +111,26 @@ const App = () => {
   }));
 
   const checkBoxOptions1 = [
-    { label: 'Pirmdiena', value: 'option-1' },
-    { label: 'Otrdiena', value: 'option-2' },
-    { label: 'Trešdiena', value: 'option-3' },
-    { label: 'Ceturtdiena', value: 'option-4' },
-    { label: 'Piektdiena', value: 'option-5' },
-    { label: 'Sestdiena', value: 'option-6' },
+    { label: 'Option 1', value: 'option-1' },
+    { label: 'Option 2', value: 'option-2' },
+    { label: 'Option 3', value: 'option-3' },
+    { label: 'Option 4', value: 'option-4' },
+    { label: 'Option 5', value: 'option-5' },
+    { label: 'Option 6', value: 'option-6' },
   ];
 
   const checkBoxOptions2 = [
-    { label: '13:00 (tikai sestdien)', value: 'option-7' },
-    { label: '15:30', value: 'option-8' },
-    { label: '17:30', value: 'option-9' },
-    { label: '10:00 (tikai sestdien)', value: 'option-10' },
+    { label: 'Option 7', value: 'option-7' },
+    { label: 'Option 8', value: 'option-8' },
+    { label: 'Option 9', value: 'option-9' },
+    { label: 'Option 10', value: 'option-10' },
   ];
 
   const procedureOptions = [
-    { label: 'Pilnā sejas kopšanas procedūra', value: 'procedure-1' },
-    { label: 'Pīlinga procedūra', value: 'procedure-2' },
-    { label: 'Sejas tīrīšana', value: 'procedure-3' },
-    { label: 'Atjaunojošā procedūra ar alginatu masku', value: 'procedure-4' },
-    { label: 'Masāža', value: 'procedure-5' },
-    { label: 'Carboxy terapija', value: 'procedure-6' },
-    { label: 'Darsonvalizācija', value: 'procedure-7' },
-    { label: 'Konsultācija', value: 'procedure-8' },
-    { label: 'Uzacis/skropstas', value: 'procedure-9' },
-
+    { label: 'Procedure 1', value: 'procedure-1' },
+    { label: 'Procedure 2', value: 'procedure-2' },
+    { label: 'Procedure 3', value: 'procedure-3' },
+    { label: 'Procedure 4', value: 'procedure-4' },
   ];
 
   return (
@@ -156,7 +149,13 @@ const App = () => {
         }}
         scrollToFirstError
       >
-
+        <Form.Item label="Процедура" name="procedure">
+          <Select>
+            {procedureOptions.map((option) => (
+              <Option key={option.value} value={option.value}>{option.label}</Option>
+            ))}
+          </Select>
+        </Form.Item>
 
         <Form.Item
           name="Vards"
@@ -175,14 +174,6 @@ const App = () => {
           <Input />
         </Form.Item>
 
-        <Form.Item label="Процедура" name="procedure">
-          <Select>
-            {procedureOptions.map((option) => (
-              <Option key={option.value} value={option.value}>{option.label}</Option>
-            ))}
-          </Select>
-        </Form.Item>
-        
         <Form.Item
   name="phone"
   label="Phone Number"
@@ -202,35 +193,30 @@ const App = () => {
   />
 </Form.Item>
 
-        <Form.Item label="Checkbox Group 1" name="group1">
-          <Radio.Group>
-            <Row>
-              {checkBoxOptions1.map((option) => (
-                <Col span={8} key={option.value}>
-                  <Radio value={option.value}>{option.label}</Radio>
-                </Col>
-              ))}
-            </Row>
-          </Radio.Group>
-        </Form.Item>
-
-        <Form.Item label="Checkbox Group 2" name="group2">
-          <Radio.Group>
-            <Row>
-              {checkBoxOptions2.map((option) => (
-                <Col span={8} key={option.value}>
-                  <Radio value={option.value}>{option.label}</Radio>
-                </Col>
-              ))}
-            </Row>
-          </Radio.Group>
-        </Form.Item>
-
-        <Form.Item {...tailFormItemLayout}>
-  <Button type="primary" htmlType="submit" style={{ backgroundColor: 'purple' }}>
-    Register
-  </Button>
+<Form.Item label="Checkbox Group 1" name="group1">
+  <Radio.Group>
+    <Row>
+      {checkBoxOptions1.map((option) => (
+        <Col span={8} key={option.value}>
+          <Radio value={option.value}>{option.label}</Radio>
+        </Col>
+      ))}
+    </Row>
+  </Radio.Group>
 </Form.Item>
+
+<Form.Item label="Checkbox Group 2" name="group2">
+  <Radio.Group>
+    <Row>
+      {checkBoxOptions2.map((option) => (
+        <Col span={8} key={option.value}>
+          <Radio value={option.value}>{option.label}</Radio>
+        </Col>
+      ))}
+    </Row>
+  </Radio.Group>
+</Form.Item>
+
       </Form>
     </div>
   );

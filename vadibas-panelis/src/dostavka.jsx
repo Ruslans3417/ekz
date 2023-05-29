@@ -51,7 +51,7 @@ function TextWithButton() {
         Чтобы узнать адрес ближайшего пакомата или пункта выдачи, нажми на линк ниже
         - Омнива - omniva.lv/privats/adreses
         - DPD - https://www.dpd.com/lv/lv/sanemsana/pickup-tikls/pickup-punktu-saraksts/</p>
-          
+          {/* Еще дополнительный текст */}
         </p>
       
     </div>
