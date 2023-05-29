@@ -46,7 +46,7 @@ ja jūs uzticēsiet man rūpes par jūsu skaistumu un ādas veselību!
       
       <main className="main-content">
       <div className="carousel-container">
-  <h2 style={{ textAlign: 'center' }}>Ваши отзывы</h2>
+  <h2 style={{ textAlign: 'center' }}>Jūsu atsauksmes</h2>
   <Carousel autoplay>
     <div>
       <img src="https://via.placeholder.com/200x100" alt="review" style={{ width: '50%' }} />
@@ -61,7 +61,7 @@ ja jūs uzticēsiet man rūpes par jūsu skaistumu un ādas veselību!
     </div>
 
     <div className="carousel-container">
-  <h2 style={{ textAlign: 'center' }}>Продукты</h2>
+  <h2 style={{ textAlign: 'center' }}>Produkti</h2>
   <Carousel autoplay dots dotPosition="top">
     <div>
       <img src="https://via.placeholder.com/100x50" alt="review" style={{ width: '50%' }} />
