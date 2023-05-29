@@ -34,10 +34,7 @@ const BoxContainer = () => {
         imageSrc={require('./corusel/5.png')}
         link="/zap"
       />
-            <Box
-        imageSrc={require('./corusel/6.png')}
-        link="/zap"
-      />
+
             <Box
         imageSrc={require('./corusel/7.png')}
         link="/zap"
