@@ -24,11 +24,11 @@ function Cart() {
 
   return (
 <div class="cart">
-  <h2>Корзина товаров</h2>
+  <h2>Preču grozsв</h2>
   <ul class="cart-items">
    
   </ul>
-  <button class="checkout-button">Заказать</button>
+  <button class="checkout-button">Pasūtīt</button>
 </div>
   );
 }
