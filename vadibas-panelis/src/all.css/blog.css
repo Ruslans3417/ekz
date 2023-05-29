@@ -9,7 +9,7 @@
 }
 
 .box {
-  width: 200px;
+  width: 700px;
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -27,7 +27,7 @@
 .box a {
   display: block;
   padding: 10px;
-  background-color: #2196f3;
+  background-color: #9a7dac;
   color: #fff;
   border-radius: 5px;
   text-decoration: none;

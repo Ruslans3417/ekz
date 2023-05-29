@@ -30,3 +30,7 @@
   .container {
     text-align: center;
   }
+  .button {
+    background-color: purple;
+    color: white;
+  }

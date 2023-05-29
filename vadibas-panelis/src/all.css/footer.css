@@ -61,7 +61,7 @@
       
       .footer-contact-list a:hover,
       .footer-social-list a:hover {
-      color: #e41a1a;
+      color: purple;
       }
       
 
@@ -84,7 +84,7 @@
         }
       }
       .footer-bottom {
-          background-color: #ebd8d8;
+          background-color: #e8d1f5;
           padding: 20px 0;
           text-align: center;
           font-size: 0.8rem;
