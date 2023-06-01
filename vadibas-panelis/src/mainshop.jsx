@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, Col, Row, Button, Select } from "antd";
 import './all.css/cartprod.css';
+import img20 from "./corusel/20.png";
 
 const { Option } = Select;
 const products = [
@@ -9,7 +10,7 @@ const products = [
     name: "Помада",
     brand: "Maybelline",
     price: 10.99,
-    image: "https://via.placeholder.com/150",
+    image: require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -17,7 +18,7 @@ const products = [
     name: "Тональный крем",
     brand: "L'Oreal",
     price: 14.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },
   {
@@ -25,7 +26,7 @@ const products = [
     name: "Пудра",
     brand: "Rimmel",
     price: 8.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
   {
@@ -33,7 +34,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },
   {
@@ -41,7 +42,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -49,7 +50,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
   {
@@ -57,7 +58,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },
   {
@@ -65,7 +66,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -73,7 +74,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
   {
@@ -81,7 +82,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },
   {
@@ -89,7 +90,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -97,7 +98,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
     {
@@ -105,14 +106,14 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },  {
     id: 14,
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -120,7 +121,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
     {
@@ -128,14 +129,14 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },  {
     id: 17,
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -143,7 +144,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
   {
@@ -151,7 +152,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },
   {
@@ -159,7 +160,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -167,7 +168,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
   {
@@ -175,7 +176,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },
   {
@@ -183,7 +184,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -191,7 +192,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
     {
@@ -199,7 +200,7 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Seja",
   },
     {
@@ -207,14 +208,14 @@ const products = [
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Lūpas",
   },  {
     id: 27,
     name: "Пудра",
     brand: "Maybelline",
     price: 9.99,
-    image: "https://via.placeholder.com/150",
+    image:  require('./corusel/20.png'),
     category: "Acis",
   },
   {
