@@ -7,7 +7,7 @@ const { Option } = Select;
 const products = [
   {
     id: 1,
-    name: "Помада",
+    name: "Lūpu krāsa",
     brand: "Maybelline",
     price: 10.99,
     image: require('./corusel/20.png'),
@@ -15,7 +15,7 @@ const products = [
   },
   {
     id: 2,
-    name: "Тональный крем",
+    name: "Tonālais krēms",
     brand: "L'Oreal",
     price: 14.99,
     image:  require('./corusel/20.png'),
@@ -23,7 +23,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Пудра",
+    name: "Lūpu krāsa",
     brand: "Rimmel",
     price: 8.99,
     image:  require('./corusel/20.png'),
@@ -31,7 +31,7 @@ const products = [
   },
   {
     id: 4,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -39,7 +39,7 @@ const products = [
   },
   {
     id: 5,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -47,7 +47,7 @@ const products = [
   },
   {
     id: 6,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -55,7 +55,7 @@ const products = [
   },
   {
     id: 7,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -63,7 +63,7 @@ const products = [
   },
   {
     id: 8,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -71,7 +71,7 @@ const products = [
   },
   {
     id: 9,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -79,7 +79,7 @@ const products = [
   },
   {
     id: 10,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -87,7 +87,7 @@ const products = [
   },
   {
     id: 11,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -95,7 +95,7 @@ const products = [
   },
   {
     id: 12,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -103,14 +103,14 @@ const products = [
   },
     {
     id: 13,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
     category: "Seja",
   },  {
     id: 14,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -118,7 +118,7 @@ const products = [
   },
   {
     id: 15,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -126,14 +126,14 @@ const products = [
   },
     {
     id: 16,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
     category: "Seja",
   },  {
     id: 17,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -141,7 +141,7 @@ const products = [
   },
   {
     id: 18,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -149,7 +149,7 @@ const products = [
   },
   {
     id: 19,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -165,7 +165,7 @@ const products = [
   },
   {
     id: 21,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -181,7 +181,7 @@ const products = [
   },
   {
     id: 23,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -189,7 +189,7 @@ const products = [
   },
   {
     id: 24,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -197,7 +197,7 @@ const products = [
   },
     {
     id: 25,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -205,7 +205,7 @@ const products = [
   },
     {
     id: 26,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image:  require('./corusel/20.png'),
@@ -220,7 +220,7 @@ const products = [
   },
   {
     id: 28,
-    name: "Пудра",
+    name: "Pūdera",
     brand: "Maybelline",
     price: 9.99,
     image: "https://via.placeholder.com/350",
