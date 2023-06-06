@@ -24,7 +24,7 @@ function Cart() {
 
   return (
 <div class="cart">
-  <h2>Preču grozsв</h2>
+  <h2>Preču grozs</h2>
   <ul class="cart-items">
    
   </ul>
