@@ -86,19 +86,19 @@ ja jūs uzticēsiet man rūpes par jūsu skaistumu un ādas veselību!
             <div>
               <img src={require('./corusel/1.png')} alt="review" style={{ width: '450px' }} />
               <div style={{ backgroundColor: 'gray', height: '30px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '40px' }}>
-                <p>Крема</p>
+                <p>Peeling un skrubs</p>
               </div>
             </div>
             <div>
               <img src={require('./corusel/1.png')} alt="review" style={{ width: '450px' }} />
               <div style={{ backgroundColor: 'gray', height: '30px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '40px' }}>
-                <p>Патчи</p>
+                <p>Patchi</p>
               </div>
             </div>
             <div>
               <img src={require('./corusel/1.png')} alt="review" style={{ width: '450px' }} />
               <div style={{ backgroundColor: 'gray', height: '30px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '40px' }}>
-                <p>Пилинг и скраб</p>
+                <p>Krēmi</p>
               </div>
             </div>
           </Carousel>
