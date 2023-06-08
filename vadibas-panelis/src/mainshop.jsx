@@ -229,7 +229,7 @@ const products = [
 
 ];
 
-const productTypes = ["Lūpu krāsa", "Tonālais krēms", "Pūdera"];
+const productTypes = ["Lūpu krāsa", "Tonālais krēms", "Pūdera","calagen","mask"];
 //выбор для селектора
 
 const CatalogPage = () => {
