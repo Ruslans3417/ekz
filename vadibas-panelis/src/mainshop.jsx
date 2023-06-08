@@ -26,7 +26,7 @@ const products = [
     name: "calagen",
     brand: "Rimmel",
     price: 8.99,
-    image:  require('./corusel/20.png'),
+    image:  require('./corusel/calagen.jpeg'),
     category: "calagen",
   },
   {
