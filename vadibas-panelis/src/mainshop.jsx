@@ -10,7 +10,7 @@ const products = [
     name: "Lūpu krāsa",
     brand: "Maybelline",
     price: 10.99,
-    image: require('./corusel/Lip_mas.jpg'),
+    image: require('./corusel/treug.jpg'),
     category: "Lūpas",
   },
   {
