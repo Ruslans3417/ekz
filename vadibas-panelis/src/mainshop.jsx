@@ -279,7 +279,7 @@ const CatalogPage = () => {
               >
                 <Card.Meta title={product.name} description={product.brand} />
                 <div style={{ marginTop: "8px", fontWeight: "bold" }}>
-                  Цена: ${product.price}
+                  Cena: ${product.price}
                 </div>
               </Card>
             </Col>
