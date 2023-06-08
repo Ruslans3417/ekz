@@ -3,14 +3,14 @@ import { Table, Button, Modal, Form, Input } from 'antd';
 
 const MainShop = () => {
   const initialProducts = [
-    { id: 1, name: 'Товар 1', price: 10 },
-    { id: 2, name: 'Товар 2', price: 15 },
-    { id: 3, name: 'Товар 3', price: 20 },
+    { id: 1, name: ' 1', price: 10 },
+    { id: 2, name: ' 2', price: 15 },
+    { id: 3, name: ' 3', price: 20 },
   ];
 
   const initialOrders = [
-    { id: 1, productName: 'Товар 1', quantity: 2 },
-    { id: 2, productName: 'Товар 2', quantity: 1 },
+    { id: 1, productName: ' 1', quantity: 2 },
+    { id: 2, productName: ' 2', quantity: 1 },
   ];
 
   const [products, setProducts] = useState(initialProducts);
@@ -44,10 +44,10 @@ const MainShop = () => {
 
   const productColumns = [
     { title: 'ID', dataIndex: 'id', key: 'id' },
-    { title: 'Название', dataIndex: 'name', key: 'name' },
-    { title: 'Цена', dataIndex: 'price', key: 'price' },
+    { title: 'Nosaukums', dataIndex: 'name', key: 'name' },
+    { title: 'Cena:', dataIndex: 'price', key: 'price' },
     {
-      title: 'Действия',
+      title: 'Darbības',
       key: 'actions',
       render: (_, record) => (
         <Button onClick={() => handleEditProduct(record)}>Редактировать</Button>
@@ -57,50 +57,50 @@ const MainShop = () => {
 
   const orderColumns = [
     { title: 'ID', dataIndex: 'id', key: 'id' },
-    { title: 'Название товара', dataIndex: 'productName', key: 'productName' },
-    { title: 'Количество', dataIndex: 'quantity', key: 'quantity' },
+    { title: 'Preces nosaukums', dataIndex: 'productName', key: 'productName' },
+    { title: 'Daudzums', dataIndex: 'quantity', key: 'quantity' },
   ];
 
   return (
     <div>
-      <h2>Товары</h2>
-      <Button onClick={() => setModalVisible(true)}>Добавить товар</Button>
+      <h2>Produkti</h2>
+      <Button onClick={() => setModalVisible(true)}>Pievienot preces</Button>
       <Table dataSource={products} columns={productColumns} />
 
-      <h2>Заказы</h2>
+      <h2>Pasūtījumi</h2>
       <Table dataSource={orders} columns={orderColumns} />
 
       <Modal
-        title="Добавить товар"
+        title="Pievienot preci"
         visible={modalVisible}
         onCancel={() => setModalVisible(false)}
         footer={null}
       >
         <Form onFinish={handleAddProduct}>
           <Form.Item
-            label="Название"
+            label="Nosaukums"
             name="name"
-            rules={[{ required: true, message: 'Введите название товара' }]}
+            rules={[{ required: true, message: 'Ievadiet preces nosaukumu' }]}
           >
             <Input />
           </Form.Item>
           <Form.Item
-            label="Цена"
+            label="Cena"
             name="price"
-            rules={[{ required: true, message: 'Введите цену товара' }]}
+            rules={[{ required: true, message: 'Ievadiet preces cenu' }]}
           >
             <Input type="number" />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Добавить
+              Pievienot 
             </Button>
           </Form.Item>
         </Form>
       </Modal>
 
       <Modal
-        title="Редактировать товар"
+        title="Rediģēt preci"
         visible={editModalVisible}
         onCancel={() => setEditModalVisible(false)}
         footer={null}
@@ -110,14 +110,14 @@ const MainShop = () => {
             <Form.Item
               label="Название"
               name="name"
-              rules={[{ required: true, message: 'Введите название товара' }]}
+              rules={[{ required: true, message: 'Ievadiet preces nosaukumu' }]}
             >
               <Input />
             </Form.Item>
             <Form.Item
               label="Цена"
               name="price"
-              rules={[{ required: true, message: 'Введите цену товара' }]}
+              rules={[{ required: true, message: 'Ievadiet preces cenu' }]}
             >
               <Input type="number" />
             </Form.Item>
