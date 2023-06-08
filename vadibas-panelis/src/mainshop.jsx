@@ -10,7 +10,7 @@ const products = [
     name: "Lūpu krāsa",
     brand: "Maybelline",
     price: 10.99,
-    image: require('./corusel/toner.jpeg'),
+    image: require('./corusel/20.png'),
     category: "Lūpas",
   },
   {
@@ -18,7 +18,7 @@ const products = [
     name: "mask",
     brand: "L'Oreal",
     price: 14.99,
-    image:  require('./corusel/mask.jpeg'),
+    image:  require('./corusel/20.png'),
     category: "mask",
   },
   {
@@ -26,7 +26,7 @@ const products = [
     name: "calagen",
     brand: "Rimmel",
     price: 8.99,
-    image:  require('./corusel/calagen.jpeg'),
+    image:  require('./corusel/20.png'),
     category: "calagen",
   },
   {
