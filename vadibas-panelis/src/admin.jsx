@@ -50,7 +50,7 @@ const MainShop = () => {
       title: 'Darbības',
       key: 'actions',
       render: (_, record) => (
-        <Button onClick={() => handleEditProduct(record)}>Редактировать</Button>
+        <Button onClick={() => handleEditProduct(record)}>Rediģēt</Button>
       ),
     },
   ];
