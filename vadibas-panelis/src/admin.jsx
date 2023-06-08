@@ -108,14 +108,14 @@ const MainShop = () => {
         {editingProduct && (
           <Form onFinish={handleUpdateProduct} initialValues={editingProduct}>
             <Form.Item
-              label="Название"
+              label="Nosaukums"
               name="name"
               rules={[{ required: true, message: 'Ievadiet preces nosaukumu' }]}
             >
               <Input />
             </Form.Item>
             <Form.Item
-              label="Цена"
+              label="Cena"
               name="price"
               rules={[{ required: true, message: 'Ievadiet preces cenu' }]}
             >
@@ -123,7 +123,7 @@ const MainShop = () => {
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit">
-                Сохранить
+                Saglabat
               </Button>
             </Form.Item>
           </Form>
