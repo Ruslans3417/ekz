@@ -18,7 +18,7 @@ const products = [
     name: "mask",
     brand: "L'Oreal",
     price: 14.99,
-    image:  require('./corusel/20.png'),
+    image:  require('./corusel/mask.jpeg'),
     category: "mask",
   },
   {
