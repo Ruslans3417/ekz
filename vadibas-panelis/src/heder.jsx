@@ -27,7 +27,7 @@ function Header() {
       <Router>
         <nav className={`navbar ${showMenu ? 'show' : ''}`}>
         <a href="/main" className="logo">
-            Cristal
+            crystalino
             </a>
           <div className="navbar-menu">
             <ul>
