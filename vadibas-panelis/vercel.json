@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "./src/server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "./src/db.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "npm run start",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "ekz/vadibas-panelis/src/main.jsx",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      { "src": "/api/cart", "dest": "./src/server.js" },
+      { "src": "/api/cart/:itemId", "dest": "./src/server.js" },
+      { "src": "/api/orders", "dest": "./src/server.js" },
+      { "src": "/(.*)", "dest": "/ekz/vadibas-panelis/src/main.jsx" }
+    ]
+  }
+  
