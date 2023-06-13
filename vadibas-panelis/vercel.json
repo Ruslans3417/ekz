@@ -8,11 +8,4 @@
       "src": "./src/db.js",
       "use": "@vercel/node"
     }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/ekz-main/vadibas-panelis"
-    }
   ]
-}
