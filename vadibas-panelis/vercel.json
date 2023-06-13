@@ -1,11 +1,12 @@
 {
-  "builds": [
-    {
-      "src": "./src/server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "./src/db.js",
-      "use": "@vercel/node"
-    }
-  ]
+  "name": "your-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "db": "node ./src/db.js",
+    "vadibas-panelis": "cd /ekz-main/vadibas-panelis"
+  },
+  "dependencies": {
+    // зависимости вашего приложения
+  }
+}
