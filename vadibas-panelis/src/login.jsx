@@ -1,12 +1,12 @@
+import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
-import './all.css/login.css';
-import Database from './database/database.json';
 
-const App = () => {
+const Login = () => {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
+
   return (
     <Form
       name="normal_login"
@@ -61,4 +61,5 @@ const App = () => {
     </Form>
   );
 };
-export default App;
+
+export default Login;

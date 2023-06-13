@@ -1,12 +1,16 @@
-const  express = require('express');
-const mongoose  = require('mongoose');
-const bodyParser  = require( 'body-parser');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const userRoutes = require('./userRoutes');
 
 const app = express();
 
 // Подключение к базе данных MongoDB
-mongoose.connect('mongodb+srv://ruslan:3472886@crystalino.vliap2z.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose
+  .connect('mongodb+srv://ruslan:3472886@crystalino.vliap2z.mongodb.net/?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log('Connected to MongoDB');
   })
@@ -17,11 +21,103 @@ mongoose.connect('mongodb+srv://ruslan:3472886@crystalino.vliap2z.mongodb.net/?r
 // Определение модели пользователя
 const User = mongoose.model('User', {
   username: String,
-  password: String
+  password: String,
+});
+
+// Определение модели товара в корзине
+const CartItem = mongoose.model('CartItem', {
+  name: String,
+  price: Number,
+});
+
+// Определение модели заказа
+const Order = mongoose.model('Order', {
+  items: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CartItem' }],
+  total: Number,
 });
 
 // Разрешить использование JSON в запросах
 app.use(bodyParser.json());
+
+// Роут для добавления товара в корзину
+app.post('/api/cart', (req, res) => {
+  const { name, price } = req.body;
+
+  // Создание нового товара в корзине с использованием модели CartItem
+  const newItem = new CartItem({
+    name,
+    price,
+  });
+
+  // Сохранение товара в корзине в базе данных
+  newItem
+    .save()
+    .then(() => {
+      res.status(200).json({ message: 'Item added to cart successfully' });
+    })
+    .catch((error) => {
+      console.error('Failed to add item to cart:', error);
+      res.status(500).json({ error: 'Failed to add item to cart' });
+    });
+});
+
+// Роут для получения всех товаров в корзине
+app.get('/api/cart', (req, res) => {
+  // Получение всех товаров в корзине из базы данных
+  CartItem.find()
+    .then((items) => {
+      res.status(200).json({ items });
+    })
+    .catch((error) => {
+      console.error('Failed to fetch cart items:', error);
+      res.status(500).json({ error: 'Failed to fetch cart items' });
+    });
+});
+
+// Роут для удаления товара из корзины по ID
+app.delete('/api/cart/:id', (req, res) => {
+  const { id } = req.params;
+
+  // Удаление товара из корзины по ID
+  CartItem.findByIdAndDelete(id)
+    .then(() => {
+      res.status(200).json({ message: 'Item removed from cart successfully' });
+    })
+    .catch((error) => {
+      console.error('Failed to remove item from cart:', error);
+      res.status(500).json({ error: 'Failed to remove item from cart' });
+    });
+});
+
+// Роут для создания заказа
+app.post('/api/orders', (req, res) => {
+  const { items, total } = req.body;
+
+  // Создание нового заказа с использованием модели Order
+  const newOrder = new Order({
+    items,
+    total,
+  });
+
+  // Сохранение заказа в базе данных
+  newOrder
+    .save()
+    .then(() => {
+      // Очистка корзины после успешного создания заказа
+      CartItem.deleteMany({})
+        .then(() => {
+          res.status(200).json({ message: 'Order placed successfully' });
+        })
+        .catch((error) => {
+          console.error('Failed to clear cart:', error);
+          res.status(500).json({ error: 'Failed to clear cart' });
+        });
+    })
+    .catch((error) => {
+      console.error('Failed to place order:', error);
+      res.status(500).json({ error: 'Failed to place order' });
+    });
+});
 
 // Подключение маршрутов пользователей
 app.use('/api', userRoutes);
@@ -33,16 +129,16 @@ app.post('/register', (req, res) => {
   app.post('/login', (req, res) => {
     // ... код обработки аутентификации ...
   });
-  
 
   // Создание нового пользователя с использованием модели User
   const newUser = new User({
     username,
-    password
+    password,
   });
 
   // Сохранение пользователя в базе данных
-  newUser.save()
+  newUser
+    .save()
     .then(() => {
       res.status(200).json({ message: 'User registered successfully' });
     })

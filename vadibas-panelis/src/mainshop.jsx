@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Card, Col, Row, Button, Select } from "antd";
 import './all.css/cartprod.css';
 import img20 from "./corusel/20.png";
+import Cart from "./karzina.jsx";
+import axios from 'axios';
 
 const { Option } = Select;
 const products = [
@@ -229,23 +231,58 @@ const products = [
 
 ];
 
-const productTypes = ["Lūpu krāsa", "Tonālais krēms", "Pūdera","calagen","mask"];
-//выбор для селектора
+const productTypes = ['Lūpu krāsa', 'Tonālais krēms', 'Pūdera', 'calagen', 'mask'];
 
 const CatalogPage = () => {
   const [selectedType, setSelectedType] = useState(null);
+  const [items, setItems] = useState([]);
+  const [total, setTotal] = useState(0);
 
-  const handleAddToCart = (product) => {
-    console.log(`Продукт "${product.name}" добавлен в корзину`);
+  const addItemToCart = (item) => {
+    axios.post('/api/cart', item)
+      .then((response) => {
+        const { items, total } = response.data;
+        const { message } = response.data;
+        console.log(message); // Опционально: вывести сообщение в консоль
+      })
+      .catch((error) => {
+        console.error('Failed to add item to cart:', error);
+      });
   };
 
+  const handleAddToCart = (item) => {
+    addItemToCart(item);
+  };
+
+  const addToCart = (item) => {
+    handleAddToCart(item);
+  };
+
+  const removeItemFromCart = (index) => {
+    const newItems = [...items];
+    const removedItem = newItems.splice(index, 1)[0];
+    setItems(newItems);
+    const newTotal = total - removedItem.price;
+    setTotal(newTotal);
+  };
+
+  const cartItems = items.map((item, index) => (
+    <tr key={index}>
+      <td>{item.name}</td>
+      <td>${item.price.toFixed(2)}</td>
+      <td>
+        <button onClick={() => removeItemFromCart(index)}>Remove</button>
+      </td>
+    </tr>
+  ));
+
   return (
-    <div style={{ padding: "24px" }}>
-      <h1 style={{ marginTop: "40px" }}>Produktu katalogs</h1>
+    <div style={{ padding: '24px' }}>
+      <h1 style={{ marginTop: '40px' }}>Produktu katalogs</h1>
       <div>
         <Select
           defaultValue="Visi produkti"
-          style={{ width: 200, marginRight: "6px" }}
+          style={{ width: 200, marginRight: '6px' }}
           onChange={(value) => setSelectedType(value)}
         >
           <Option value={null}>Visi produkti</Option>
@@ -259,9 +296,7 @@ const CatalogPage = () => {
       </div>
       <Row gutter={[16, 16]} className="card-container">
         {products
-          .filter((product) =>
-            selectedType ? product.name === selectedType : true
-          )
+          .filter((product) => (selectedType ? product.name === selectedType : true))
           .map((product) => (
             <Col xs={24} sm={12} md={12} lg={8} key={product.id}>
               <Card
@@ -269,18 +304,16 @@ const CatalogPage = () => {
                 hoverable
                 actions={[
                   <Button
-                  type="primary"
-                  onClick={() => handleAddToCart(product)}
-                  style={{ backgroundColor: '#9a7dac' }}
-                >
-                  Pievienot grozam
-                </Button>,
+                    type="primary"
+                    onClick={() => addToCart(product)}
+                    style={{ backgroundColor: '#9a7dac' }}
+                  >
+                    Pievienot grozam
+                  </Button>,
                 ]}
               >
                 <Card.Meta title={product.name} description={product.brand} />
-                <div style={{ marginTop: "8px", fontWeight: "bold" }}>
-                  Cena: ${product.price}
-                </div>
+                <div style={{ marginTop: '8px', fontWeight: 'bold' }}>Cena: ${product.price}</div>
               </Card>
             </Col>
           ))}

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Button, Modal, Form, Input } from 'antd';
 
-const MainShop = () => {
+const MainShop = ({ cartItems, setCartItems }) => {
   const initialProducts = [
     { id: 1, name: ' 1', price: 10 },
     { id: 2, name: ' 2', price: 15 },
@@ -18,6 +18,7 @@ const MainShop = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
+
 
   const handleAddProduct = (values) => {
     const newProduct = {
@@ -56,10 +57,30 @@ const MainShop = () => {
   ];
 
   const orderColumns = [
-    { title: 'ID', dataIndex: 'id', key: 'id' },
-    { title: 'Preces nosaukums', dataIndex: 'productName', key: 'productName' },
-    { title: 'Daudzums', dataIndex: 'quantity', key: 'quantity' },
+    { title: 'Numurs', dataIndex: 'id', key: 'id' },
+    { title: 'Cena', dataIndex: 'price', key: 'price' },
   ];
+
+  const handleOrder = () => {
+    const newOrder = {
+      id: orders.length + 1,
+      price: calculateTotal(),
+    };
+    setOrders([...orders, newOrder]);
+  };
+
+  const calculateTotal = () => {
+    let total = 0;
+    for (const item of cartItems) {
+      total += item.price;
+    }
+    return total;
+  };
+
+  
+  useEffect(() => {
+    setOrders([...orders]);
+  }, [orders]);
 
   return (
     <div>
@@ -93,7 +114,7 @@ const MainShop = () => {
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Pievienot 
+              Pievienot
             </Button>
           </Form.Item>
         </Form>
@@ -123,12 +144,14 @@ const MainShop = () => {
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit">
-                Saglabat
+                Saglabāt
               </Button>
             </Form.Item>
           </Form>
         )}
       </Modal>
+
+      
     </div>
   );
 };
