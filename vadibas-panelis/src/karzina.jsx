@@ -4,16 +4,16 @@ import axios from 'axios';
 const Karzina = () => {
   const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    axios.get('/api/cart')
-      .then((response) => {
-        const { items } = response.data;
-        setCartItems(items);
-      })
-      .catch((error) => {
-        console.error('Failed to fetch cart items:', error);
-      });
-  }, []);
+useEffect(() => {
+  axios.get('/api/cart')
+    .then((response) => {
+      const { items } = response.data;
+      setCartItems(items || []);
+    })
+    .catch((error) => {
+      console.error('Failed to fetch cart items:', error);
+    });
+}, []);
 
   const removeItem = (itemId) => {
     axios.delete(`/api/cart/${itemId}`)
@@ -29,12 +29,14 @@ const Karzina = () => {
   };
 
   const calculateTotal = () => {
-    let total = 0;
+  let total = 0;
+  if (cartItems) {
     for (const item of cartItems) {
       total += item.price;
     }
-    return total;
-  };
+  }
+  return total;
+};
 
   const placeOrder = () => {
     const orderData = {
