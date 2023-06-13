@@ -108,7 +108,7 @@ const Karzina = () => {
           </button>
         </div>
       ) : (
-        <p style={{ fontSize: "20px", marginTop: "20px" }}>Jūsu grozs ir tukšs</p>
+        <p style={{ fontSize: "20px", marginTop: "20px",marginBottom: "220px" }}>Jūsu grozs ir tukšs</p>
       )}
     </div>
   );
