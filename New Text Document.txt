@@ -1,3 +1,4 @@
 PS C:\Prakse\Projekts> cd .\vadibas-panelis\
 PS C:\Prakse\Projekts\vadibas-panelis> npm run start
-npm i antd-weekly-calendar
+PS C:\ekz-main\vadibas-panelis> node ./src/server.js
+PS C:\ekz-main\vadibas-panelis> node ./src/db.js
