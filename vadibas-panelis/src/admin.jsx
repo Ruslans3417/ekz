@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Button, Modal, Form, Input } from 'antd';
 import axios from 'axios';
+import Karzina from './karzina.jsx';
 
 const MainShop = ({ cartItems, setCartItems }) => {
   const initialProducts = [
-    { id: 1, name: ' ', price: 0 },
-    { id: 2, name: ' ', price: 0 },
-    { id: 3, name: ' ', price: 0 },
+    { id: 1, name: 'Lūpu krāsa', price: 10.99 },
+    { id: 2, name: 'mask', price: 14.99 },
+    { id: 3, name: 'calagen ', price: 8.99 },
+    { id: 4, name: 'Pūdera ', price: 9.99 },
   ];
 
   const initialOrders = [
@@ -63,20 +65,22 @@ const MainShop = ({ cartItems, setCartItems }) => {
   ];
 
   const handleOrder = () => {
-    const newOrder = {
-      name: cartItems[0].name,
-      price: calculateTotal(),
-      procedure: 'Procedūras',
-    };
+    if (cartItems && cartItems.length > 0) {
+      const newOrder = {
+        name: cartItems[0].name,
+        price: calculateTotal(),
+        procedure: 'Procedūras',
+      };
 
-    axios
-      .post('/api/orders', newOrder)
-      .then((response) => {
-        console.log('Order created:', response.data);
-      })
-      .catch((error) => {
-        console.error('Error creating order:', error);
-      });
+      axios
+        .post('/api/orders', newOrder)
+        .then((response) => {
+          console.log('Order created:', response.data);
+        })
+        .catch((error) => {
+          console.error('Error creating order:', error);
+        });
+    }
   };
 
   const calculateTotal = () => {
@@ -89,19 +93,16 @@ const MainShop = ({ cartItems, setCartItems }) => {
 
   useEffect(() => {
     setOrders([...orders]);
-  }, [orders]);
+  }, []);
 
   return (
     <div>
-      <h2>Produkti</h2>
-      <Button onClick={() => setModalVisible(true)}>Pievienot preces</Button>
+      <h1>MainShop</h1>
+      <Button onClick={() => setModalVisible(true)}>Pievienot produktu</Button>
       <Table dataSource={products} columns={productColumns} />
 
-      <h2>Pasūtījumi</h2>
-      <Table dataSource={orders} columns={orderColumns} />
-
       <Modal
-        title="Pievienot preci"
+        title="Pievienot produktu"
         visible={modalVisible}
         onCancel={() => setModalVisible(false)}
         footer={null}
@@ -110,16 +111,16 @@ const MainShop = ({ cartItems, setCartItems }) => {
           <Form.Item
             label="Nosaukums"
             name="name"
-            rules={[{ required: true, message: 'Ievadiet preces nosaukumu' }]}
+            rules={[{ required: true, message: 'Lūdzu ievadiet produkta nosaukumu!' }]}
           >
             <Input />
           </Form.Item>
           <Form.Item
             label="Cena"
             name="price"
-            rules={[{ required: true, message: 'Ievadiet preces cenu' }]}
+            rules={[{ required: true, message: 'Lūdzu ievadiet produkta cenu!' }]}
           >
-            <Input type="number" />
+            <Input />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
@@ -130,37 +131,39 @@ const MainShop = ({ cartItems, setCartItems }) => {
       </Modal>
 
       <Modal
-        title="Rediģēt preci"
+        title="Rediģēt produktu"
         visible={editModalVisible}
         onCancel={() => setEditModalVisible(false)}
         footer={null}
       >
-        {editingProduct && (
-          <Form onFinish={handleUpdateProduct} initialValues={editingProduct}>
-            <Form.Item
-              label="Nosaukums"
-              name="name"
-              rules={[{ required: true, message: 'Ievadiet preces nosaukumu' }]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="Cena"
-              name="price"
-              rules={[{ required: true, message: 'Ievadiet preces cenu' }]}
-            >
-              <Input type="number" />
-            </Form.Item>
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Saglabāt
-              </Button>
-            </Form.Item>
-          </Form>
-        )}
+        <Form onFinish={handleUpdateProduct} initialValues={editingProduct}>
+          <Form.Item
+            label="Nosaukums"
+            name="name"
+            rules={[{ required: true, message: 'Lūdzu ievadiet produkta nosaukumu!' }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Cena"
+            name="price"
+            rules={[{ required: true, message: 'Lūdzu ievadiet produkta cenu!' }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Saglabāt
+            </Button>
+          </Form.Item>
+        </Form>
       </Modal>
 
-      <Button onClick={handleOrder}>Izveidot pasūtījumu</Button>
+  
+
+      <h2>Pasūtījumi</h2>
+      <Button onClick={handleOrder}>Pasūtīt</Button>
+      <Table dataSource={orders} columns={orderColumns} />
     </div>
   );
 };

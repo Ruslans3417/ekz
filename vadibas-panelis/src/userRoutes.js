@@ -14,31 +14,31 @@ router.get('/mainshop', (req, res) => {
 });
 
 router.get('/karzina', (req, res) => {
-  // Обработка запроса для файла karzina.jsx
+  
   const filePath = path.join(__dirname, '.', 'src', 'karzina.jsx');
   res.sendFile(filePath);
 });
 
 router.get('/admin', (req, res) => {
-  // Обработка запроса для файла karzina.jsx
+ 
   const filePath = path.join(__dirname, '.', 'src', 'admin.jsx');
   res.sendFile(filePath);
 });
 
 router.get('/zap', (req, res) => {
-  // Обработка запроса для файла karzina.jsx
+ 
   const filePath = path.join(__dirname, '.', 'src', 'zap.jsx');
   res.sendFile(filePath);
 });
 
 router.get('/contact', (req, res) => {
-  // Обработка запроса для файла contact.jsx
+  
   const filePath = path.join(__dirname, '.', 'src', 'contact.jsx');
   res.sendFile(filePath);
 });
 
 router.get('/blog', (req, res) => {
-  // Обработка запроса для файла blog.jsx
+  
   const filePath = path.join(__dirname, '.', 'src', 'blog.jsx');
   res.sendFile(filePath);
 });
@@ -50,7 +50,7 @@ router.get('/dostavka', (req, res) => {
 });
 
 router.get('/reg', (req, res) => {
-  // Обработка запроса для файла dostavka.jsx
+  
   const filePath = path.join(__dirname, '.', 'src', 'reg.jsx');
   res.sendFile(filePath);
 });

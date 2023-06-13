@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { Card, Col, Row, Button, Select } from "antd";
 import './all.css/cartprod.css';
 import img20 from "./corusel/20.png";
+import treug from "./corusel/treug.jpg";
+import mask from "./corusel/mask.jpeg";
+import calagen from "./corusel/calagen.jpeg";
 import Cart from "./karzina.jsx";
-import axios from 'axios';
+
 
 const { Option } = Select;
 const products = [
@@ -231,7 +234,7 @@ const products = [
 
 ];
 
-const productTypes = ['Lūpu krāsa', 'Tonālais krēms', 'Pūdera', 'calagen', 'mask'];
+const productTypes = ["Lūpu krāsa", "Tonālais krēms", "Pūdera","calagen","mask"];
 
 const CatalogPage = () => {
   const [selectedType, setSelectedType] = useState(null);
@@ -239,23 +242,10 @@ const CatalogPage = () => {
   const [total, setTotal] = useState(0);
 
   const addItemToCart = (item) => {
-    axios.post('/api/cart', item)
-      .then((response) => {
-        const { items, total } = response.data;
-        const { message } = response.data;
-        console.log(message); // Опционально: вывести сообщение в консоль
-      })
-      .catch((error) => {
-        console.error('Failed to add item to cart:', error);
-      });
-  };
-
-  const handleAddToCart = (item) => {
-    addItemToCart(item);
-  };
-
-  const addToCart = (item) => {
-    handleAddToCart(item);
+    const newItems = [...items, item];
+    setItems(newItems);
+    const newTotal = total + item.price;
+    setTotal(newTotal);
   };
 
   const removeItemFromCart = (index) => {
@@ -277,12 +267,12 @@ const CatalogPage = () => {
   ));
 
   return (
-    <div style={{ padding: '24px' }}>
-      <h1 style={{ marginTop: '40px' }}>Produktu katalogs</h1>
+    <div style={{ padding: "24px" }}>
+      <h1 style={{ marginTop: "40px" }}>Produktu katalogs</h1>
       <div>
         <Select
           defaultValue="Visi produkti"
-          style={{ width: 200, marginRight: '6px' }}
+          style={{ width: 200, marginRight: "6px" }}
           onChange={(value) => setSelectedType(value)}
         >
           <Option value={null}>Visi produkti</Option>
@@ -296,7 +286,9 @@ const CatalogPage = () => {
       </div>
       <Row gutter={[16, 16]} className="card-container">
         {products
-          .filter((product) => (selectedType ? product.name === selectedType : true))
+          .filter((product) =>
+            selectedType ? product.name === selectedType : true
+          )
           .map((product) => (
             <Col xs={24} sm={12} md={12} lg={8} key={product.id}>
               <Card
@@ -305,7 +297,7 @@ const CatalogPage = () => {
                 actions={[
                   <Button
                     type="primary"
-                    onClick={() => addToCart(product)}
+                    onClick={() => addItemToCart(product)}
                     style={{ backgroundColor: '#9a7dac' }}
                   >
                     Pievienot grozam
@@ -313,13 +305,16 @@ const CatalogPage = () => {
                 ]}
               >
                 <Card.Meta title={product.name} description={product.brand} />
-                <div style={{ marginTop: '8px', fontWeight: 'bold' }}>Cena: ${product.price}</div>
+                <div style={{ marginTop: "8px", fontWeight: "bold" }}>
+                  Cena: ${product.price}
+                </div>
               </Card>
             </Col>
           ))}
       </Row>
-    </div>
-  );
+</div>
+ ); 
+ 
 };
 
 export default CatalogPage;
