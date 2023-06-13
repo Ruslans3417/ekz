@@ -7,10 +7,12 @@
     {
       "src": "./src/db.js",
       "use": "@vercel/node"
-    },
+    }
+  ],
+  "routes": [
     {
-      "src": "npm run start",
-      "use": "@vercel/node"
+      "src": "/",
+      "dest": "/ekz-main/vadibas-panelis"
     }
   ]
 }
