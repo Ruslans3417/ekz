@@ -87,7 +87,7 @@ const Karzina = () => {
               </button>
             </div>
           ))}
-          <p style={{ fontSize: "20px", marginTop: "20px", marginBottom: "60px" }}>
+          <p style={{ fontSize: "20px", marginTop: "20px", marginBottom: "108px" }}>
             Kopējā summa: {calculateTotal()} $
           </p>
 
