@@ -2,7 +2,7 @@
     "build": {
       "commands": [
         "cd /ekz/vadibas-panelis",
-        "npm install",
+        
         "node ./src/server.js",
         "node ./src/db.js"
       ]
