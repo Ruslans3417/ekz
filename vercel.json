@@ -1,8 +1,0 @@
-{
-    "build": {
-      "commands": 
-        "node ./src/server.js",
-        "node ./src/db.js"
-      ]
-    }
-  }
