@@ -32,8 +32,9 @@ const CartItem = mongoose.model('CartItem', {
 
 // Определение модели заказа
 const Order = mongoose.model('Order', {
-  items: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CartItem' }],
-  total: Number,
+  name: String,
+  price: Number,
+  procedure: String,
 });
 
 // Разрешить использование JSON в запросах
@@ -91,27 +92,20 @@ app.delete('/api/cart/:id', (req, res) => {
 
 // Роут для создания заказа
 app.post('/api/orders', (req, res) => {
-  const { items, total } = req.body;
+  const { name, price, procedure } = req.body;
 
   // Создание нового заказа с использованием модели Order
   const newOrder = new Order({
-    items,
-    total,
+    name,
+    price,
+    procedure,
   });
 
   // Сохранение заказа в базе данных
   newOrder
     .save()
     .then(() => {
-      // Очистка корзины после успешного создания заказа
-      CartItem.deleteMany({})
-        .then(() => {
-          res.status(200).json({ message: 'Order placed successfully' });
-        })
-        .catch((error) => {
-          console.error('Failed to clear cart:', error);
-          res.status(500).json({ error: 'Failed to clear cart' });
-        });
+      res.status(200).json({ message: 'Order placed successfully' });
     })
     .catch((error) => {
       console.error('Failed to place order:', error);

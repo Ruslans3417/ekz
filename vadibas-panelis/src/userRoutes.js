@@ -25,6 +25,11 @@ router.get('/admin', (req, res) => {
   res.sendFile(filePath);
 });
 
+router.get('/zap', (req, res) => {
+  // Обработка запроса для файла karzina.jsx
+  const filePath = path.join(__dirname, '.', 'src', 'zap.jsx');
+  res.sendFile(filePath);
+});
 
 router.get('/contact', (req, res) => {
   // Обработка запроса для файла contact.jsx

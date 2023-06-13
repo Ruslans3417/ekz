@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Button, Modal, Form, Input } from 'antd';
+import axios from 'axios';
 
 const MainShop = ({ cartItems, setCartItems }) => {
   const initialProducts = [
-    { id: 1, name: ' 1', price: 10 },
-    { id: 2, name: ' 2', price: 15 },
-    { id: 3, name: ' 3', price: 20 },
+    { id: 1, name: ' ', price: 0 },
+    { id: 2, name: ' ', price: 0 },
+    { id: 3, name: ' ', price: 0 },
   ];
 
   const initialOrders = [
-    { id: 1, productName: ' 1', quantity: 2 },
-    { id: 2, productName: ' 2', quantity: 1 },
+    { id: 1, name: ' ', price: 0, quantity: 2 },
+    { id: 2, name: ' ', price: 0, quantity: 1 },
   ];
 
   const [products, setProducts] = useState(initialProducts);
@@ -18,7 +19,6 @@ const MainShop = ({ cartItems, setCartItems }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
-
 
   const handleAddProduct = (values) => {
     const newProduct = {
@@ -58,15 +58,25 @@ const MainShop = ({ cartItems, setCartItems }) => {
 
   const orderColumns = [
     { title: 'Numurs', dataIndex: 'id', key: 'id' },
+    { title: 'Nosaukums', dataIndex: 'name', key: 'name' },
     { title: 'Cena', dataIndex: 'price', key: 'price' },
   ];
 
   const handleOrder = () => {
     const newOrder = {
-      id: orders.length + 1,
+      name: cartItems[0].name,
       price: calculateTotal(),
+      procedure: 'Procedūras',
     };
-    setOrders([...orders, newOrder]);
+
+    axios
+      .post('/api/orders', newOrder)
+      .then((response) => {
+        console.log('Order created:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error creating order:', error);
+      });
   };
 
   const calculateTotal = () => {
@@ -77,7 +87,6 @@ const MainShop = ({ cartItems, setCartItems }) => {
     return total;
   };
 
-  
   useEffect(() => {
     setOrders([...orders]);
   }, [orders]);
@@ -151,7 +160,7 @@ const MainShop = ({ cartItems, setCartItems }) => {
         )}
       </Modal>
 
-      
+      <Button onClick={handleOrder}>Izveidot pasūtījumu</Button>
     </div>
   );
 };

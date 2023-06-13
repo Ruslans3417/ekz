@@ -1,6 +1,6 @@
 import { AutoComplete, Button, Cascader, Col, Form, Input, InputNumber, Radio, Row, Select, Checkbox } from 'antd';
 import { useState } from 'react';
-
+import axios from 'axios';
 import './all.css/reg.css';
 
 import './all.css/reg.css';
@@ -72,8 +72,15 @@ const tailFormItemLayout = {
 };
 const App = () => {
   const [form] = Form.useForm();
+
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    axios.post('/api/orders', values)
+      .then((response) => {
+        console.log('Order created:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error creating order:', error);
+      });
   };
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -175,7 +182,7 @@ const App = () => {
           <Input />
         </Form.Item>
 
-        <Form.Item label="Процедура" name="procedure">
+        <Form.Item label="Procedūra" name="procedure">
           <Select>
             {procedureOptions.map((option) => (
               <Option key={option.value} value={option.value}>{option.label}</Option>
