@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const uri = 'const uri = process.env.MONGODB_URI;';
+const uri = process.env.MONGODB_URI;
 
 let client; // Глобальная переменная для хранения подключения
 
