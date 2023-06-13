@@ -1,8 +1,6 @@
 {
     "build": {
-      "commands": [
-        "cd /ekz/vadibas-panelis",
-        
+      "commands": 
         "node ./src/server.js",
         "node ./src/db.js"
       ]
