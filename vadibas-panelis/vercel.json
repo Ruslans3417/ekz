@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "./src/server.js",
@@ -11,6 +12,13 @@
     {
       "src": "npm run start",
       "use": "@vercel/node"
+    },
+    {
+      "src": "ekz/vadibas-panelis/src/main.jsx",
+      "use": "@vercel/static-build"
     }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/ekz/vadibas-panelis/src/main.jsx" }
   ]
 }
