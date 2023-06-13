@@ -5,8 +5,5 @@
     "start": "node ./src/server.js",
     "db": "node ./src/db.js",
     "vadibas-panelis": "cd /ekz-main/vadibas-panelis"
-  },
-  "dependencies": {
-    // зависимости вашего приложения
   }
 }
