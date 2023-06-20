@@ -6,7 +6,7 @@ import treug from "./corusel/treug.jpg";
 import mask from "./corusel/mask.jpeg";
 import calagen from "./corusel/calagen.jpeg";
 import Cart from "./karzina.jsx";
-
+import axios from 'axios';
 
 const { Option } = Select;
 const products = [
@@ -82,6 +82,155 @@ const products = [
     image:  require('./corusel/20.png'),
     category: "Acis",
   },
+  {
+    id: 10,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Seja",
+  },
+  {
+    id: 11,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Lūpas",
+  },
+  {
+    id: 12,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Acis",
+  },
+    {
+    id: 13,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Seja",
+  },  {
+    id: 14,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Lūpas",
+  },
+  {
+    id: 15,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Acis",
+  },
+    {
+    id: 16,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Seja",
+  },  {
+    id: 17,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Lūpas",
+  },
+  {
+    id: 18,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Acis",
+  },
+  {
+    id: 19,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Seja",
+  },
+  {
+    id: 20,
+    name: "Пудра",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Lūpas",
+  },
+  {
+    id: 21,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Acis",
+  },
+  {
+    id: 22,
+    name: "Пудра",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Seja",
+  },
+  {
+    id: 23,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Lūpas",
+  },
+  {
+    id: 24,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Acis",
+  },
+    {
+    id: 25,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Seja",
+  },
+    {
+    id: 26,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Lūpas",
+  },  {
+    id: 27,
+    name: "Пудра",
+    brand: "Maybelline",
+    price: 9.99,
+    image:  require('./corusel/20.png'),
+    category: "Acis",
+  },
+  {
+    id: 28,
+    name: "Pūdera",
+    brand: "Maybelline",
+    price: 9.99,
+    image: "https://via.placeholder.com/350",
+    category: "Seja",
+  },
 
 ];
 
@@ -93,10 +242,14 @@ const CatalogPage = () => {
   const [total, setTotal] = useState(0);
 
   const addItemToCart = (item) => {
-    const newItems = [...items, item];
-    setItems(newItems);
-    const newTotal = total + item.price;
-    setTotal(newTotal);
+    axios.post('/api/cart', item)
+      .then((response) => {
+        const { message } = response.data;
+        console.log(message); // Опционально: выведите сообщение в консоль
+      })
+      .catch((error) => {
+        console.error('Failed to add item to cart:', error);
+      });
   };
 
   const removeItemFromCart = (index) => {

@@ -22,15 +22,21 @@ const MainShop = ({ cartItems, setCartItems }) => {
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
 
+
   const handleAddProduct = (values) => {
-    const newProduct = {
-      id: products.length + 1,
-      name: values.name,
-      price: values.price,
-    };
-    setProducts([...products, newProduct]);
-    setModalVisible(false);
+    axios
+      .post('/api/products', values)
+      .then((response) => {
+        const newProduct = response.data.product;
+        setProducts([...products, newProduct]);
+        setModalVisible(false);
+      })
+      .catch((error) => {
+        console.error('Failed to add product:', error);
+      });
   };
+
+
 
   const handleEditProduct = (record) => {
     setEditingProduct(record);
@@ -91,9 +97,19 @@ const MainShop = ({ cartItems, setCartItems }) => {
     return total;
   };
 
+
+
   useEffect(() => {
-    setOrders([...orders]);
+    axios.get('/api/products')
+      .then((response) => {
+        setProducts(response.data.products);
+      })
+      .catch((error) => {
+        console.error('Failed to fetch products:', error);
+      });
   }, []);
+
+
 
   return (
     <div>

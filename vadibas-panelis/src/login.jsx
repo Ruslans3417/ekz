@@ -1,12 +1,9 @@
-import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
-
-const Login = () => {
+const App = () => {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
-
   return (
     <Form
       name="normal_login"
@@ -56,10 +53,9 @@ const Login = () => {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <a href="/reg">register now!</a>
+        Or <a href="">register now!</a>
       </Form.Item>
     </Form>
   );
 };
-
-export default Login;
+export default App;

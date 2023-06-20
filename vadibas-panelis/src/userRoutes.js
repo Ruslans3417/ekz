@@ -60,8 +60,8 @@ router.get('/users', (req, res) => {
   // Обработка запроса на получение списка пользователей
   // Здесь вы можете использовать вашу собственную логику для получения пользователей из базы данных
   const users = [
-    { username: 'Ruslan', password: 'password123' },
-    { username: 'Natalija', password: 'password456' },
+    { username: 'Ruslan', password: 'password123',admin:'1'},
+    { username: 'Natalija', password: 'password456',admin:'0' },
   ];
   res.json(users);
 });

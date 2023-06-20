@@ -24,6 +24,11 @@ const User = mongoose.model('User', {
   password: String,
 });
 
+const Product = mongoose.model('Product', {
+  name: String,
+  price: Number,
+});
+
 // Определение модели товара в корзине
 const CartItem = mongoose.model('CartItem', {
   name: String,
@@ -61,6 +66,41 @@ app.post('/api/cart', (req, res) => {
       res.status(500).json({ error: 'Failed to add item to cart' });
     });
 });
+
+
+//роут для создания нового товара:
+
+app.post('/api/products', (req, res) => {
+  const { name, price } = req.body;
+
+  const newProduct = new Product({
+    name,
+    price,
+  });
+
+  newProduct.save()
+    .then(() => {
+      res.status(200).json({ message: 'Product created successfully' });
+    })
+    .catch((error) => {
+      console.error('Failed to create product:', error);
+      res.status(500).json({ error: 'Failed to create product' });
+    });
+});
+
+app.get('/api/products', (req, res) => {
+  Product.find()
+    .then((products) => {
+      res.status(200).json({ products });
+    })
+    .catch((error) => {
+      console.error('Failed to fetch products:', error);
+      res.status(500).json({ error: 'Failed to fetch products' });
+    });
+});
+
+
+
 
 // Роут для получения всех товаров в корзине
 app.get('/api/cart', (req, res) => {

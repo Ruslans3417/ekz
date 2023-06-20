@@ -19,7 +19,7 @@ const Karzina = () => {
     axios.delete(`/api/cart/${itemId}`)
       .then((response) => {
         const { message } = response.data;
-        console.log(message); // Опционально: вывести сообщение в консоль
+        console.log(message); // Опционально: выведите сообщение в консоль
         setCartItems(cartItems.filter((item) => item._id !== itemId));
       })
       .catch((error) => {
