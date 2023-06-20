@@ -100,6 +100,20 @@ app.get('/api/products', (req, res) => {
 });
 
 
+// Роут для удаления товара
+app.delete('/api/products/:id', (req, res) => {
+  const { id } = req.params;
+
+  // Удаление товара по ID
+  Product.findByIdAndDelete(id)
+    .then(() => {
+      res.status(200).json({ id });
+    })
+    .catch((error) => {
+      console.error('Failed to delete product:', error);
+      res.status(500).json({ error: 'Failed to delete product' });
+    });
+});
 
 
 // Роут для получения всех товаров в корзине

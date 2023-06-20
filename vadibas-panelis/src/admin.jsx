@@ -51,6 +51,12 @@ const MainShop = ({ cartItems, setCartItems }) => {
     setEditModalVisible(false);
   };
 
+  const handleDeleteProduct = (record) => {
+    console.log('Deleting product:', record); // Добавьте эту строку для отладки
+    deleteProduct(record);
+  };
+  
+  
   const productColumns = [
     { title: 'ID', dataIndex: 'id', key: 'id' },
     { title: 'Nosaukums', dataIndex: 'name', key: 'name' },
@@ -59,7 +65,11 @@ const MainShop = ({ cartItems, setCartItems }) => {
       title: 'Darbības',
       key: 'actions',
       render: (_, record) => (
-        <Button onClick={() => handleEditProduct(record)}>Rediģēt</Button>
+        <>
+          <Button onClick={() => handleEditProduct(record)}>Rediģēt</Button>
+          <Button onClick={() => handleDeleteProduct(record)}>Dzēst</Button>
+
+        </>
       ),
     },
   ];
@@ -110,12 +120,28 @@ const MainShop = ({ cartItems, setCartItems }) => {
   }, []);
 
 
+  const deleteProduct = (record) => {
+    axios
+      .delete(`/api/products/${record._id}`)
+      .then((response) => {
+        const deletedProductId = record.id;
+        const updatedProducts = products.filter((product) => product._id !== deletedProductId);
+        setProducts(updatedProducts);
+      })
+      .catch((error) => {
+        console.error('Failed to delete product:', error);
+      });
+  };
+
+
+
 
   return (
     <div>
       <h1>MainShop</h1>
       <Button onClick={() => setModalVisible(true)}>Pievienot produktu</Button>
       <Table dataSource={products} columns={productColumns} />
+      
 
       <Modal
         title="Pievienot produktu"
@@ -179,6 +205,7 @@ const MainShop = ({ cartItems, setCartItems }) => {
 
       <h2>Pasūtījumi</h2>
       <Button onClick={handleOrder}>Pasūtīt</Button>
+      
       <Table dataSource={orders} columns={orderColumns} />
     </div>
   );
